@@ -1,622 +1,1159 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IQ Assessment Test</title>
+<title>IQ-Intelligenztest (Deutsch) – Premium 2025</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--pri:#4f46e5;--pri2:#7c3aed;--bg:#0f172a;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--green:#22c55e;--red:#ef4444;--orange:#f97316;--blue:#3b82f6;--purple:#a855f7}
+:root{--pri:#4f46e5;--pri2:#7c3aed;--bg:#0f172a;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--green:#22c55e;--red:#ef4444}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 #app{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-.landing{text-align:center;max-width:700px;animation:fadeUp .6s ease}
-.landing h1{font-size:2.8rem;background:linear-gradient(135deg,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;font-weight:800;letter-spacing:-1px}
-.landing .sub{color:#94a3b8;font-size:1.1rem;margin-bottom:40px}
-.landing .desc{color:#cbd5e1;font-size:1rem;line-height:1.7;margin-bottom:36px;text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px}
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
-.info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 16px}
-.info-card .num{font-size:1.6rem;font-weight:700;color:#818cf8}
-.info-card .lbl{color:#94a3b8;font-size:.85rem;margin-top:4px}
-.cats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px}
-.cat-tag{background:rgba(129,140,248,.12);color:#a5b4fc;padding:8px 18px;border-radius:100px;font-size:.85rem;border:1px solid rgba(129,140,248,.2)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 48px;border-radius:14px;border:none;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .2s}
+/* LANDING */
+.landing{text-align:center;max-width:760px;animation:fadeUp .6s ease}
+.landing h1{font-size:2.7rem;background:linear-gradient(135deg,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;font-weight:800;letter-spacing:-1px}
+.landing .sub{color:#94a3b8;font-size:1.1rem;margin-bottom:32px}
+.landing .desc{color:#cbd5e1;font-size:.95rem;line-height:1.75;margin-bottom:28px;text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 14px}
+.info-card .num{font-size:1.7rem;font-weight:700;color:#818cf8}
+.info-card .lbl{color:#94a3b8;font-size:.82rem;margin-top:4px}
+.cats{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:28px}
+.cat-tag{padding:7px 16px;border-radius:100px;font-size:.82rem;border:1px solid;font-weight:500}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;border-radius:14px;border:none;font-size:1.05rem;font-weight:600;cursor:pointer;transition:all .2s}
 .btn-primary{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;box-shadow:0 4px 24px rgba(79,70,229,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,70,229,.45)}
 .btn-secondary{background:rgba(255,255,255,.06);color:#cbd5e1;border:1px solid rgba(255,255,255,.1)}
-.btn-secondary:hover{background:rgba(255,255,255,.1)}
-.test-container{width:100%;max-width:800px;animation:fadeUp .4s ease}
-.progress-bar{background:rgba(255,255,255,.08);border-radius:100px;height:6px;margin-bottom:24px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2));border-radius:100px;transition:width .4s ease}
-.test-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.q-counter{color:#94a3b8;font-size:.9rem}
-.q-cat{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.q-cat[data-cat="P"]{background:rgba(59,130,246,.15);color:#60a5fa}
-.q-cat[data-cat="N"]{background:rgba(34,197,94,.15);color:#4ade80}
+.btn-secondary:hover{background:rgba(255,255,255,.12)}
+.btn-danger{background:rgba(239,68,68,.12);color:#fca5a5;border:1px solid rgba(239,68,68,.25)}
+.btn-icon{padding:8px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#94a3b8;cursor:pointer;font-size:.9rem;transition:all .2s;display:inline-flex;align-items:center;gap:5px;font-family:inherit;font-weight:500}
+.btn-icon:hover{background:rgba(255,255,255,.1);color:#e2e8f0;border-color:rgba(255,255,255,.2)}
+.btn-icon.flagged{background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.45);color:#fb923c}
+/* NAME/CONTINUE */
+.name-screen,.continue-screen{text-align:center;max-width:480px;animation:fadeUp .5s ease}
+.name-screen h2,.continue-screen h2{font-size:1.9rem;color:#e2e8f0;font-weight:700;margin-bottom:8px}
+.name-screen p,.continue-screen p{color:#94a3b8;margin-bottom:24px;line-height:1.6;font-size:.95rem}
+.name-input{width:100%;padding:15px 20px;border-radius:14px;border:2px solid rgba(129,140,248,.3);background:rgba(255,255,255,.06);color:#e2e8f0;font-size:1.1rem;outline:none;transition:border-color .2s;margin-bottom:18px}
+.name-input:focus{border-color:rgba(129,140,248,.7)}
+.name-input::placeholder{color:#475569}
+.saves-list{margin-top:20px;text-align:left}
+.saves-list h4{color:#64748b;font-size:.78rem;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.save-item{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:background .2s}
+.save-item:hover{background:rgba(129,140,248,.1)}
+.save-item .save-name{color:#c7d2fe;font-weight:600;font-size:.93rem}
+.save-item .save-meta{color:#64748b;font-size:.78rem}
+.ci-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:18px;margin:16px 0;text-align:left}
+.ci-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);color:#cbd5e1;font-size:.92rem}
+.ci-row:last-child{border-bottom:none}
+.ci-val{color:#a5b4fc;font-weight:600}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* TEST */
+.test-container{width:100%;max-width:820px;animation:fadeUp .35s ease}
+.progress-bar{background:rgba(255,255,255,.08);border-radius:100px;height:6px;margin-bottom:18px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2));border-radius:100px;transition:width .5s ease}
+.test-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px;flex-wrap:wrap}
+.test-header-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.test-header-right{display:flex;align-items:center;gap:8px}
+.q-counter{color:#94a3b8;font-size:.87rem}
+.q-cat{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:100px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.q-cat[data-cat="M"]{background:rgba(59,130,246,.15);color:#60a5fa}
+.q-cat[data-cat="Z"]{background:rgba(34,197,94,.15);color:#4ade80}
 .q-cat[data-cat="L"]{background:rgba(249,115,22,.15);color:#fb923c}
-.q-cat[data-cat="V"]{background:rgba(168,85,247,.15);color:#c084fc}
-.q-cat[data-cat="S"]{background:rgba(236,72,153,.15);color:#f472b6}
-.timer{color:#94a3b8;font-size:.85rem;font-variant-numeric:tabular-nums}
-.q-card{background:var(--card);border-radius:20px;padding:36px;box-shadow:0 4px 40px rgba(0,0,0,.25);margin-bottom:20px}
-.q-title{font-size:1.15rem;font-weight:600;margin-bottom:24px;color:var(--text);line-height:1.5}
-.q-visual{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;padding:20px;background:#f8fafc;border-radius:14px}
-.q-visual .arrow{color:#94a3b8;font-size:1.5rem;margin:0 4px}
-.cell{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;width:72px;height:72px;background:#fff;border:2px solid var(--border);border-radius:10px;gap:2px;padding:4px;transition:all .2s}
-.cell-missing{border:2px dashed #cbd5e1;background:#f1f5f9;font-size:1.5rem;font-weight:700;color:#94a3b8}
-.matrix-grid{display:inline-grid;gap:6px;margin-bottom:28px;padding:20px;background:#f8fafc;border-radius:14px}
-.matrix-3{grid-template-columns:repeat(3,72px)}
-.opts-grid{display:grid;gap:12px}
+.q-cat[data-cat="R"]{background:rgba(236,72,153,.15);color:#f472b6}
+.q-cat[data-cat="V"]{background:rgba(139,92,246,.15);color:#c4b5fd}
+.diff-stars{font-size:.7rem;letter-spacing:1px}
+.timer{color:#94a3b8;font-size:.82rem;font-variant-numeric:tabular-nums}
+.q-card{background:var(--card);border-radius:20px;padding:30px;box-shadow:0 4px 40px rgba(0,0,0,.28);margin-bottom:14px}
+.q-title{font-size:1.08rem;font-weight:600;margin-bottom:20px;color:var(--text);line-height:1.55}
+.q-visual{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:22px;padding:18px;background:#f8fafc;border-radius:14px}
+.cell{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;width:66px;height:66px;background:#fff;border:2px solid var(--border);border-radius:10px;gap:2px;padding:4px}
+.cell-missing{border:2px dashed #cbd5e1;background:#f1f5f9;font-size:1.4rem;font-weight:700;color:#94a3b8}
+.matrix-grid{display:inline-grid;gap:6px;padding:14px;background:#f8fafc;border-radius:14px}
+.matrix-3{grid-template-columns:repeat(3,66px)}
+.opts-grid{display:grid;gap:9px}
 .opts-4{grid-template-columns:repeat(2,1fr)}
-.opts-6{grid-template-columns:repeat(3,1fr)}
-.opt-btn{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:14px;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;text-align:left;font-size:1rem;color:var(--text)}
+.opts-2{grid-template-columns:1fr}
+.opt-btn{display:flex;align-items:center;gap:12px;padding:12px 15px;border-radius:12px;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;text-align:left;font-size:.96rem;color:var(--text);width:100%}
 .opt-btn:hover{border-color:#a5b4fc;background:#f5f3ff}
-.opt-btn.selected{border-color:var(--pri);background:#eef2ff;box-shadow:0 0 0 3px rgba(79,70,229,.15)}
-.opt-btn.correct{border-color:var(--green);background:#f0fdf4}
-.opt-btn.wrong{border-color:var(--red);background:#fef2f2}
-.opt-label{width:28px;height:28px;border-radius:8px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--muted);flex-shrink:0}
+.opt-btn.selected{border-color:var(--pri);background:#eef2ff;box-shadow:0 0 0 3px rgba(79,70,229,.12)}
+.opt-label{width:26px;height:26px;border-radius:7px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--muted);flex-shrink:0;transition:all .2s}
 .opt-btn.selected .opt-label{background:var(--pri);color:#fff}
 .opt-content{flex:1;line-height:1.4}
-.nav-row{display:flex;justify-content:flex-end;margin-top:16px}
 .shape{line-height:1}
-.results{text-align:center;max-width:750px;animation:fadeUp .6s ease}
-.iq-display{margin-bottom:16px}
+/* ANALOGY */
+.analogy-display{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:22px;padding:22px 18px;background:linear-gradient(135deg,#f8faff,#f3f0ff);border-radius:16px;border:2px solid #e8edff}
+.analogy-word{font-weight:700;color:#1e293b;padding:10px 18px;background:#fff;border:2px solid #dde4ff;border-radius:12px;font-size:1rem;box-shadow:0 2px 8px rgba(79,70,229,.08)}
+.analogy-sep{color:#94a3b8;font-size:1.4rem;font-weight:300;user-select:none}
+.analogy-eq{color:#6366f1;font-size:1.1rem;font-weight:600;padding:0 6px}
+.analogy-blank{font-weight:800;color:#4f46e5;padding:10px 26px;background:linear-gradient(135deg,#eef2ff,#f5f0ff);border:2px dashed #818cf8;border-radius:12px;font-size:1.1rem;letter-spacing:3px}
+/* SEQ DISPLAY */
+.seq-display{font-size:1.3rem;font-weight:700;text-align:center;padding:15px;background:#f8fafc;border-radius:12px;letter-spacing:3px;color:#1e293b;margin-top:12px}
+/* NAV ROW */
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:8px;flex-wrap:wrap}
+.nav-left{display:flex;align-items:center;gap:8px}
+.nav-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+/* OVERLAYS */
+.overlay{position:fixed;inset:0;background:rgba(15,23,42,.88);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
+.overlay-card{background:#1e293b;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:36px;text-align:center;max-width:400px;width:100%}
+.overlay-card h2{font-size:1.8rem;color:#e2e8f0;margin-bottom:8px}
+.overlay-card p{color:#94a3b8;margin-bottom:24px;line-height:1.6;font-size:.94rem}
+.overlay-card .btn-col{display:flex;flex-direction:column;gap:10px;align-items:center}
+/* OVERVIEW */
+.overview-card{background:#1e293b;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:28px;max-width:600px;width:100%;max-height:85vh;overflow-y:auto}
+.overview-card h3{color:#e2e8f0;font-size:1.15rem;font-weight:700;margin-bottom:4px}
+.ov-sub{color:#64748b;font-size:.82rem;margin-bottom:20px}
+.q-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-bottom:16px}
+.q-dot{width:100%;aspect-ratio:1;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s;border:2px solid transparent;position:relative}
+.q-dot:hover{transform:scale(1.12);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.q-dot.unanswered{background:rgba(255,255,255,.07);color:#64748b;border-color:rgba(255,255,255,.08)}
+.q-dot.answered{color:#fff}
+.q-dot.flagged{border-color:#f97316 !important}
+.q-dot.flagged::after{content:'🚩';position:absolute;top:-7px;right:-7px;font-size:.55rem;line-height:1}
+.q-dot.current{outline:3px solid #fff;outline-offset:2px}
+.ov-legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.ov-leg{display:flex;align-items:center;gap:6px;color:#94a3b8;font-size:.78rem}
+.ov-leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+/* RESULTS */
+.results{text-align:center;max-width:820px;animation:fadeUp .6s ease;width:100%}
+.iq-display{margin-bottom:10px}
 .iq-score{font-size:5rem;font-weight:800;background:linear-gradient(135deg,#818cf8,#c084fc,#f0abfc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
-.iq-label{color:#94a3b8;font-size:1rem;margin-top:4px}
-.classification{font-size:1.3rem;font-weight:600;margin-bottom:4px}
-.percentile{color:#94a3b8;font-size:.95rem;margin-bottom:32px}
-.bell-curve-container{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;margin-bottom:28px}
-.bell-curve-container h3{color:#e2e8f0;font-size:1rem;margin-bottom:16px}
-.cat-breakdown{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;margin-bottom:28px;text-align:left}
-.cat-breakdown h3{color:#e2e8f0;font-size:1rem;margin-bottom:18px;text-align:center}
-.cat-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.cat-name{width:140px;color:#cbd5e1;font-size:.88rem;flex-shrink:0}
-.cat-bar-bg{flex:1;height:10px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
-.cat-bar-fill{height:100%;border-radius:100px;transition:width 1s ease}
-.cat-pct{width:42px;text-align:right;color:#94a3b8;font-size:.85rem;font-weight:600}
-.details-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;margin-bottom:28px}
-.details-card h3{color:#e2e8f0;font-size:1rem;margin-bottom:14px;text-align:center}
-.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.detail-item{text-align:center}
-.detail-val{font-size:1.3rem;font-weight:700;color:#a5b4fc}
-.detail-lbl{color:#94a3b8;font-size:.78rem;margin-top:2px}
-.disclaimer{color:#64748b;font-size:.78rem;line-height:1.6;margin-top:20px;padding:16px;background:rgba(255,255,255,.02);border-radius:12px;border:1px solid rgba(255,255,255,.05)}
-.btn-row{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes countUp{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.iq-label{color:#94a3b8;font-size:.92rem;margin-top:4px}
+.classification{font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.percentile{color:#94a3b8;font-size:.9rem;margin-bottom:20px}
+.res-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;margin-bottom:18px}
+.res-card h3{color:#e2e8f0;font-size:.93rem;font-weight:700;margin-bottom:14px;text-align:center}
+.cat-row{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.cat-name{width:150px;color:#cbd5e1;font-size:.85rem;flex-shrink:0}
+.cat-bar-bg{flex:1;height:9px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
+.cat-bar-fill{height:100%;border-radius:100px;transition:width 1.3s ease}
+.cat-pct{width:42px;text-align:right;color:#94a3b8;font-size:.82rem;font-weight:600}
+.cat-tip{color:#94a3b8;font-size:.77rem;margin-top:-6px;margin-bottom:10px;margin-left:161px;font-style:italic;line-height:1.5;padding-right:55px}
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.detail-item{text-align:center;background:rgba(255,255,255,.03);border-radius:10px;padding:12px 8px}
+.detail-val{font-size:1.2rem;font-weight:700;color:#a5b4fc}
+.detail-lbl{color:#94a3b8;font-size:.73rem;margin-top:3px}
+/* WRONG ANSWERS */
+.wrong-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:15px;margin-bottom:12px}
+.wrong-item:last-child{margin-bottom:0}
+.wrong-header{display:flex;align-items:center;gap:9px;margin-bottom:9px;flex-wrap:wrap}
+.wrong-num{background:rgba(239,68,68,.15);color:#fca5a5;padding:3px 10px;border-radius:100px;font-size:.74rem;font-weight:700}
+.wrong-cat-badge{padding:3px 10px;border-radius:100px;font-size:.71rem;font-weight:600}
+.wrong-diff{color:#64748b;font-size:.74rem}
+.wrong-title{color:#e2e8f0;font-size:.87rem;font-weight:500;line-height:1.4;margin-bottom:8px}
+.wrong-analogy{color:#94a3b8;font-size:.78rem;font-style:italic;margin-bottom:8px;padding:6px 10px;background:rgba(139,92,246,.08);border-radius:7px;display:inline-block}
+.wrong-ans-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.ans-box{padding:9px 12px;border-radius:9px;font-size:.83rem}
+.ans-box.usr{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+.ans-box.cor{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:#86efac}
+.ans-box .al{font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;opacity:.7;margin-bottom:3px}
+.expl{background:rgba(129,140,248,.07);border-left:3px solid rgba(129,140,248,.4);padding:10px 13px;border-radius:0 8px 8px 0;color:#c7d2fe;font-size:.82rem;line-height:1.65}
+/* MOTIVATIONAL BANNER */
+.motiv-banner{padding:16px 20px;border-radius:14px;margin-bottom:18px;text-align:left;border:1px solid}
+.motiv-banner .mb-title{font-size:1.02rem;font-weight:700;margin-bottom:5px}
+.motiv-banner .mb-text{font-size:.87rem;line-height:1.6;opacity:.88}
+/* SHARE ROW */
+.share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.share-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#cbd5e1;cursor:pointer;font-size:.88rem;font-weight:500;transition:all .2s;font-family:inherit}
+.share-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.28)}
+.share-btn.copied{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.4);color:#4ade80}
+/* IQ RANGE TABLE */
+.iq-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px}
+.iq-table th{color:#64748b;font-weight:600;text-align:left;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px}
+.iq-table td{padding:7px 10px;color:#cbd5e1;border-bottom:1px solid rgba(255,255,255,.04)}
+.iq-table tr.current-row td{font-weight:700;color:#a5b4fc}
+.iq-table tr:last-child td{border-bottom:none}
+/* DISCLAIMER */
+.disclaimer{color:#64748b;font-size:.75rem;line-height:1.65;margin-top:14px;padding:14px;background:rgba(255,255,255,.02);border-radius:10px;border:1px solid rgba(255,255,255,.05);text-align:left}
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(70px);background:#1e293b;border:1px solid rgba(129,140,248,.4);color:#c7d2fe;padding:11px 22px;border-radius:12px;font-size:.88rem;font-weight:500;z-index:10000;transition:transform .3s cubic-bezier(.34,1.56,.64,1);box-shadow:0 8px 24px rgba(0,0,0,.4);white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+/* CONFETTI */
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+/* PRINT */
+@media print{
+  body{background:#fff !important}
+  #confettiCanvas,.toast,#app>*:not(.results){display:none}
+  .results>*:not(.print-cert){display:none !important}
+  .print-cert{display:block !important;border:4px solid #4f46e5;border-radius:12px;padding:48px;text-align:center;color:#000}
+  .print-cert h1{font-size:2.2rem;margin-bottom:6px;color:#1e293b}
+  .print-cert .pc-iq{font-size:4rem;font-weight:800;color:#4f46e5;margin:16px 0}
+  .print-cert .pc-meta{font-size:1rem;color:#475569;line-height:1.8}
+  .print-cert .pc-dis{font-size:.72rem;color:#94a3b8;margin-top:20px;line-height:1.6}
+}
+.print-cert{display:none}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.7}50%{opacity:1}}
+/* RESPONSIVE */
 @media(max-width:600px){
   .landing h1{font-size:2rem}
   .info-grid{grid-template-columns:1fr}
-  .q-card{padding:20px}
-  .cell{width:56px;height:56px}
-  .opts-4,.opts-6{grid-template-columns:1fr}
-  .detail-grid{grid-template-columns:1fr}
+  .q-card{padding:16px}
+  .cell{width:52px;height:52px}
+  .matrix-3{grid-template-columns:repeat(3,52px)}
+  .opts-4{grid-template-columns:1fr}
+  .detail-grid{grid-template-columns:1fr 1fr}
   .iq-score{font-size:3.5rem}
-  .matrix-3{grid-template-columns:repeat(3,56px)}
+  .wrong-ans-grid{grid-template-columns:1fr}
+  .q-grid{grid-template-columns:repeat(6,1fr)}
+  .analogy-display{gap:6px;padding:14px 10px}
+  .analogy-word{padding:8px 12px;font-size:.9rem}
+  .analogy-blank{padding:8px 16px}
+  .test-header{flex-direction:column;align-items:flex-start}
+  .nav-row{flex-direction:column-reverse;gap:10px}
+  .nav-left,.nav-right{width:100%;justify-content:space-between}
+  .cat-tip{margin-left:0;padding-right:0}
 }
 </style>
 </head>
 <body>
+<canvas id="confettiCanvas"></canvas>
 <div id="app"></div>
+<div class="toast" id="toast"></div>
 <script>
-// ═══════════════════ SHAPES & COLORS ═══════════════════
-const SH={c:['●','○'],s:['■','□'],t:['▲','△'],d:['◆','◇'],st:['★','☆'],x:['✚','✚'],h:['⬡','⬡']};
-const C={B:'#3b82f6',R:'#ef4444',G:'#22c55e',P:'#a855f7',O:'#f97316',T:'#14b8a6',PK:'#ec4899',Y:'#eab308'};
-const CAT_NAMES={P:'Pattern Recognition',N:'Numerical Reasoning',L:'Logical Reasoning',V:'Verbal Reasoning',S:'Spatial Reasoning'};
-const CAT_COLORS={P:'#3b82f6',N:'#22c55e',L:'#f97316',V:'#a855f7',S:'#ec4899'};
+/* ===================== SHAPES & COLORS ===================== */
+const SH={c:['●','○'],s:['■','□'],t:['▲','△'],d:['◆','◇'],st:['★','☆']};
+const C={B:'#3b82f6',R:'#ef4444',G:'#22c55e',P:'#a855f7',O:'#f97316',T:'#14b8a6'};
+function sh(t,c,f,sz){return{t:t||'c',c:c||C.B,f:f!==false,sz:sz||34};}
 
-function sh(t,c=C.B,f=true,sz=34){return{t,c,f,sz};}
+/* ===================== CATEGORIES ===================== */
+const KAT={
+  M:{name:'Mustererkennung',col:'#3b82f6',icon:'🔷'},
+  Z:{name:'Numerisches Denken',col:'#22c55e',icon:'🔢'},
+  L:{name:'Logisches Denken',col:'#f97316',icon:'🧩'},
+  R:{name:'Räumliches Denken',col:'#ec4899',icon:'📐'},
+  V:{name:'Verbale Analogien',col:'#8b5cf6',icon:'💬'}
+};
 
-// ═══════════════════ QUESTIONS ═══════════════════
-const QUESTIONS=[
-// ── PATTERN RECOGNITION ──
-{cat:'P',diff:1,type:'seq',title:'What shape comes next in the sequence?',
+/* ===================== QUESTIONS (48) ===================== */
+const FRAGEN=[
+/* ─── MUSTERERKENNUNG (8) ─── */
+{cat:'M',diff:1,type:'seq',title:'Welche Form kommt als Nächstes?',
  seq:[[sh('c')],[sh('s')],[sh('t')],[sh('c')],[sh('s')]],
- opts:[[sh('s')],[sh('d')],[sh('t')],[sh('c')]],ans:2},
+ opts:[[sh('d')],[sh('t')],[sh('c')],[sh('st')]],ans:1,
+ expl:'Das Muster ●→■→▲ wiederholt sich zyklisch. Nach ● und ■ folgt zwingend ▲.'},
 
-{cat:'P',diff:1,type:'seq',title:'What comes next in the sequence?',
- seq:[[sh('c',C.B,true,20)],[sh('c',C.B,true,20),sh('c',C.B,true,20)],[sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20)],[sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20)]],
- opts:[[sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20)],[sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20)],[sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20),sh('c',C.B,true,20)],[sh('c',C.B,true,20),sh('c',C.B,true,20)]],ans:1},
+{cat:'M',diff:1,type:'seq',title:'Die Anzahl der Punkte wächst um 1. Welches Element folgt?',
+ seq:[[sh('c',C.B,true,18)],
+      [sh('c',C.B,true,18),sh('c',C.B,true,18)],
+      [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
+      [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)]],
+ opts:[[sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
+       [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
+       [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
+       [sh('c',C.B,true,18),sh('c',C.B,true,18)]],ans:0,
+ expl:'Arithmetische Folge +1 Punkt: 1→2→3→4→5.'},
 
-{cat:'P',diff:2,type:'seq',title:'Identify the two patterns and find the next element.',
+{cat:'M',diff:2,type:'seq',title:'Form und Farbe folgen zwei verschiedenen Mustern gleichzeitig. Was kommt als Nächstes?',
  seq:[[sh('c',C.R)],[sh('c',C.B)],[sh('s',C.R)],[sh('s',C.B)],[sh('t',C.R)]],
- opts:[[sh('t',C.R)],[sh('c',C.B)],[sh('d',C.B)],[sh('t',C.B)]],ans:3},
+ opts:[[sh('t',C.R)],[sh('t',C.B)],[sh('d',C.B)],[sh('c',C.B)]],ans:1,
+ expl:'Form wechselt alle 2 Schritte: ●→●→■→■→▲→▲. Farbe alterniert: Rot↔Blau. Nach ▲-Rot folgt ▲-Blau.'},
 
-{cat:'P',diff:3,type:'seq',title:'Observe size and shape patterns. What comes next?',
+{cat:'M',diff:2,type:'text',title:'Welche Zahl passt <b>nicht</b> in die Gruppe?',
+ q:'<div class="seq-display">4 &nbsp; 9 &nbsp; 16 &nbsp; 25 &nbsp; 35 &nbsp; 49</div>',
+ opts:['4','25','35','49'],ans:2,
+ expl:'Alle anderen sind Quadratzahlen: 2²=4, 3²=9, 4²=16, 5²=25, 7²=49. Die Zahl 35 ist keine Quadratzahl (6²=36, 5²=25).'},
+
+{cat:'M',diff:3,type:'seq',title:'Beobachte das Größen- und Formmuster. Welches Element fehlt am Ende?',
  seq:[[sh('c',C.B,true,22)],[sh('s',C.B,true,34)],[sh('t',C.B,true,46)],[sh('c',C.B,true,34)],[sh('s',C.B,true,22)]],
- opts:[[sh('t',C.B,true,22)],[sh('t',C.B,true,46)],[sh('s',C.B,true,34)],[sh('c',C.B,true,46)]],ans:1},
+ opts:[[sh('t',C.B,true,22)],[sh('t',C.B,true,46)],[sh('s',C.B,true,34)],[sh('c',C.B,true,46)]],ans:0,
+ expl:'Formen: ●→■→▲ (zyklisch). Größen: klein→mittel→groß→mittel→klein→klein (Spiegelung). → ▲ klein.'},
 
-{cat:'P',diff:4,type:'matrix',title:'Each row and column contains each shape and color exactly once. Find the missing cell.',
- grid:[
-  [[sh('c',C.R)],[sh('s',C.B)],[sh('t',C.G)]],
-  [[sh('s',C.G)],[sh('t',C.R)],[sh('c',C.B)]],
-  [[sh('t',C.B)],[sh('c',C.G)],null]
- ],
- opts:[[sh('s',C.R)],[sh('c',C.R)],[sh('t',C.R)],[sh('s',C.G)],[sh('d',C.R)],[sh('c',C.G)]],ans:0},
+{cat:'M',diff:3,type:'text',title:'Erkenne das Muster in der Matrix. Welche Zahl fehlt?',
+ q:`<div style="display:flex;justify-content:center"><div style="display:inline-grid;grid-template-columns:repeat(3,58px);gap:7px;margin:8px 0;text-align:center">
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">2</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">4</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">8</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">3</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">9</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">27</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">4</div>
+<div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">16</div>
+<div style="padding:12px;background:#dbeafe;border:2px dashed #3b82f6;border-radius:8px;font-weight:700;font-size:1.1rem;color:#3b82f6">?</div>
+</div></div>`,
+ opts:['32','48','64','81'],ans:2,
+ expl:'Muster pro Zeile: a, a², a³. Zeile 1: 2,4,8 (=2¹,2²,2³). Zeile 2: 3,9,27. Zeile 3: 4,16,64 (=4³).'},
 
-{cat:'P',diff:5,type:'matrix',title:'Find the rules for shape, color, size, and fill. What is the missing cell?',
- grid:[
-  [[sh('c',C.R,true,22)],[sh('s',C.B,false,22)],[sh('t',C.G,true,22)]],
-  [[sh('c',C.R,false,34)],[sh('s',C.B,true,34)],[sh('t',C.G,false,34)]],
-  [[sh('c',C.R,true,46)],[sh('s',C.B,false,46)],null]
- ],
- opts:[[sh('t',C.G,false,46)],[sh('t',C.R,true,46)],[sh('t',C.G,true,46)],[sh('s',C.G,true,46)],[sh('t',C.B,true,46)],[sh('c',C.G,true,46)]],ans:2},
+{cat:'M',diff:4,type:'matrix',title:'Jede Zeile und Spalte enthält jede Form und jede Farbe genau einmal. Was fehlt?',
+ grid:[[[sh('c',C.R)],[sh('s',C.B)],[sh('t',C.G)]],
+       [[sh('s',C.G)],[sh('t',C.R)],[sh('c',C.B)]],
+       [[sh('t',C.B)],[sh('c',C.G)],null]],
+ opts:[[sh('s',C.R)],[sh('c',C.R)],[sh('t',C.R)],[sh('s',C.G)],[sh('d',C.R)],[sh('c',C.G)]],ans:0,
+ expl:'Zeile 3 hat ▲ und ●, fehlt ■. Spalte 3 hat ▲, ●, fehlt ■. Farben in Zeile 3: Blau, Grün – fehlt Rot. → ■ in Rot.'},
 
-// ── NUMERICAL REASONING ──
-{cat:'N',diff:1,type:'text',title:'What number comes next in the sequence?',
- q:'2, &nbsp; 4, &nbsp; 6, &nbsp; 8, &nbsp; __',
- opts:['9','10','12','14'],ans:1},
+{cat:'M',diff:5,type:'matrix',title:'Beachte Form, Farbe, Größe <em>und</em> Füllung zugleich. Was ist das fehlende Element?',
+ grid:[[[sh('c',C.R,true,22)],[sh('s',C.B,false,22)],[sh('t',C.G,true,22)]],
+       [[sh('c',C.R,false,34)],[sh('s',C.B,true,34)],[sh('t',C.G,false,34)]],
+       [[sh('c',C.R,true,46)],[sh('s',C.B,false,46)],null]],
+ opts:[[sh('t',C.G,false,46)],[sh('t',C.R,true,46)],[sh('t',C.G,true,46)],[sh('s',C.G,true,46)],[sh('t',C.B,true,46)],[sh('c',C.G,true,46)]],ans:2,
+ expl:'Spalte 3: immer ▲ Grün. Füllung Zeile 3: ausgefüllt (Muster voll→leer→voll). Größe Zeile 3: 46px (klein→mittel→groß). → ▲ Grün, ausgefüllt, groß.'},
 
-{cat:'N',diff:2,type:'text',title:'What number comes next?',
- q:'3, &nbsp; 6, &nbsp; 12, &nbsp; 24, &nbsp; __',
- opts:['30','36','48','96'],ans:2},
+/* ─── NUMERISCHES DENKEN (10) ─── */
+{cat:'Z',diff:1,type:'text',title:'Erkenne das Muster und wähle die nächste Zahl:',
+ q:'<div class="seq-display">2 &nbsp;4 &nbsp;6 &nbsp;8 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['9','10','12','14'],ans:1,
+ expl:'Arithmetische Folge mit Differenz d = +2. Nach 8 folgt 8+2 = 10.'},
 
-{cat:'N',diff:2,type:'text',title:'What number comes next in this famous sequence?',
- q:'1, &nbsp; 1, &nbsp; 2, &nbsp; 3, &nbsp; 5, &nbsp; 8, &nbsp; __',
- opts:['10','11','13','15'],ans:2},
+{cat:'Z',diff:2,type:'text',title:'Geometrische Folge – was kommt als Nächstes?',
+ q:'<div class="seq-display">3 &nbsp;6 &nbsp;12 &nbsp;24 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['36','48','30','96'],ans:1,
+ expl:'Geometrische Folge mit Quotient q = 2 (jede Zahl wird verdoppelt). 24 × 2 = 48.'},
 
-{cat:'N',diff:3,type:'text',title:'What number comes next?',
- q:'2, &nbsp; 3, &nbsp; 5, &nbsp; 7, &nbsp; 11, &nbsp; __',
- opts:['12','13','14','15'],ans:1},
+{cat:'Z',diff:2,type:'text',title:'Fibonacci-Folge – jede Zahl ist die Summe der zwei vorherigen:',
+ q:'<div class="seq-display">1 &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;5 &nbsp;8 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['10','11','13','15'],ans:2,
+ expl:'Fibonacci: jedes Glied = Summe der zwei vorherigen. 5 + 8 = 13.'},
 
-{cat:'N',diff:3,type:'text',title:'Each number follows the pattern n³. What comes next?',
- q:'1, &nbsp; 8, &nbsp; 27, &nbsp; 64, &nbsp; __',
- opts:['81','100','125','216'],ans:2},
+{cat:'Z',diff:3,type:'text',title:'Primzahlen-Folge – was folgt?',
+ q:'<div class="seq-display">2 &nbsp;3 &nbsp;5 &nbsp;7 &nbsp;11 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['12','13','14','15'],ans:1,
+ expl:'Primzahlen sind nur durch 1 und sich selbst teilbar. Nach 11 folgt 13 (12=4×3, 14=2×7, 15=3×5 → zusammengesetzt).'},
 
-{cat:'N',diff:4,type:'text',title:'What number comes next?',
- q:'1, &nbsp; 2, &nbsp; 6, &nbsp; 24, &nbsp; 120, &nbsp; __',
- opts:['240','360','600','720'],ans:3},
+{cat:'Z',diff:2,type:'text',title:'Quadratzahlen-Folge – was kommt danach?',
+ q:'<div class="seq-display">1 &nbsp;4 &nbsp;9 &nbsp;16 &nbsp;25 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['30','36','42','49'],ans:1,
+ expl:'n²: 1²=1, 2²=4, 3²=9, 4²=16, 5²=25, 6²=36.'},
 
-{cat:'N',diff:5,type:'text',title:'Each number is the sum of the three preceding numbers. What comes next?',
- q:'0, &nbsp; 1, &nbsp; 1, &nbsp; 2, &nbsp; 4, &nbsp; 7, &nbsp; 13, &nbsp; __',
- opts:['19','20','24','26'],ans:2},
+{cat:'Z',diff:3,type:'text',title:'Kubikzahlen-Folge – was folgt?',
+ q:'<div class="seq-display">1 &nbsp;8 &nbsp;27 &nbsp;64 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['81','100','125','216'],ans:2,
+ expl:'n³: 1³=1, 2³=8, 3³=27, 4³=64, 5³=125.'},
 
-// ── LOGICAL REASONING ──
-{cat:'L',diff:1,type:'text',title:'Evaluate the following logical argument:',
- q:'All dogs are animals. All animals need water.<br><br><b>Conclusion:</b> All dogs need water.',
- opts:['Valid — the conclusion follows','Invalid — the conclusion does not follow','Cannot be determined','Only partially true'],ans:0},
+{cat:'Z',diff:3,type:'text',title:'Die Differenzen wachsen um 2. Was kommt als Nächstes?',
+ q:'<div class="seq-display">2 &nbsp;5 &nbsp;10 &nbsp;17 &nbsp;26 &nbsp;37 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['44','50','54','60'],ans:1,
+ expl:'Differenzen: +3, +5, +7, +9, +11 → nächste Differenz: +13. 37+13=50. Alternativ: n²+1 (7²+1=50).'},
 
-{cat:'L',diff:2,type:'text',title:'Evaluate this reasoning:',
- q:'<em>"If it rains, the street gets wet."</em><br><br>Observation: The street is wet.<br><br>Can we conclude that it rained?',
- opts:['Yes, it must have rained','No — the street could be wet for other reasons','Only if there are no sprinklers','Yes, because the statement is biconditional'],ans:1},
+{cat:'Z',diff:3,type:'text',title:'Dreieckszahlen (jede Zeile eines Dreiecks addiert) – was folgt?',
+ q:'<div class="seq-display">1 &nbsp;3 &nbsp;6 &nbsp;10 &nbsp;15 &nbsp;21 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['24','27','28','30'],ans:2,
+ expl:'Dreieckszahlen: n(n+1)/2. Differenzen: +2,+3,+4,+5,+6,+7. 21+7=28.'},
 
-{cat:'L',diff:2,type:'text',title:'Is this syllogism valid?',
- q:'Some cats are black.<br>Some black things are hats.<br><br><b>Conclusion:</b> Therefore, some cats are hats.',
- opts:['Valid','Invalid — undistributed middle','Valid only for some cats','Cannot be determined'],ans:1},
+{cat:'Z',diff:3,type:'text',title:'Welche Zahl passt <b>nicht</b> in die Gruppe?',
+ q:'<div class="seq-display">2 &nbsp;3 &nbsp;5 &nbsp;7 &nbsp;9 &nbsp;11</div>',
+ opts:['5','7','9','11'],ans:2,
+ expl:'Alle anderen (2, 3, 5, 7, 11) sind Primzahlen. 9 = 3×3 ist eine zusammengesetzte Zahl und keine Primzahl.'},
 
-{cat:'L',diff:3,type:'text',title:'Determine the ordering:',
- q:'A is taller than B.<br>C is shorter than B.<br>D is taller than A.<br><br>Who is the <b>shortest</b>?',
- opts:['A','B','C','D'],ans:2},
+{cat:'Z',diff:4,type:'text',title:'Die Differenzen nehmen ab. Was folgt?',
+ q:'<div class="seq-display">100 &nbsp;90 &nbsp;81 &nbsp;73 &nbsp;66 &nbsp;60 &nbsp;<span style="color:#3b82f6">__</span></div>',
+ opts:['53','55','57','60'],ans:1,
+ expl:'Differenzen: −10, −9, −8, −7, −6 → nächste: −5. 60 − 5 = 55.'},
 
-{cat:'L',diff:3,type:'text',title:'Apply the rule to draw a conclusion:',
- q:'No student who passed the exam is lazy.<br>John is a student.<br>John is lazy.<br><br>What can we conclude?',
- opts:['John passed the exam','John did not pass the exam','John is not a student','Nothing can be concluded'],ans:1},
+/* ─── LOGISCHES DENKEN (10) ─── */
+{cat:'L',diff:1,type:'text',title:'Ist dieser deduktive Schluss logisch gültig?',
+ q:'Alle Hunde sind Tiere.<br>Alle Tiere brauchen Wasser.<br><br><b>Schlussfolgerung:</b> Alle Hunde brauchen Wasser.',
+ opts:['Gültig – folgt zwingend','Ungültig – folgt nicht','Unbestimmbar','Nur teilweise wahr'],ans:0,
+ expl:'Gültiger Syllogismus (Barbara): Hunde ⊆ Tiere, Tiere ⊆ {Wasserbedarf} → Hunde ⊆ {Wasserbedarf}. Die Schlussfolgerung folgt zwingend.'},
 
-{cat:'L',diff:4,type:'text',title:'Only one statement is true. Where is the prize?',
- q:'Three boxes each have a statement:<br><br>📦 <b>Box A:</b> "The prize is in this box."<br>📦 <b>Box B:</b> "The prize is not in this box."<br>📦 <b>Box C:</b> "The prize is not in Box A."<br><br>Exactly <b>one</b> statement is true. Which box contains the prize?',
- opts:['Box A','Box B','Box C','Cannot be determined'],ans:1},
+{cat:'L',diff:2,type:'text',title:'Erkenne den logischen Fehlschluss:',
+ q:'<em>„Wenn es regnet, wird die Straße nass."</em><br><br>Beobachtung: Die Straße ist nass.<br><br>Kann man zwingend schlussfolgern, dass es geregnet hat?',
+ opts:['Ja, es muss geregnet haben','Nein – andere Ursachen sind möglich','Nur wenn keine Sprinkler vorhanden','Ja, das gilt bikonditional'],ans:1,
+ expl:'Fehlschluss „Bestätigung des Konsequens": Aus P→Q und Q folgt logisch NICHT P. Die nasse Straße kann durch Sprinkler, Putzfahrzeuge usw. entstanden sein.'},
 
-{cat:'L',diff:5,type:'text',title:'Use the clues to solve:',
- q:'Five people have different favorite colors:<br><br>1. Dave\'s favorite is Red<br>2. Eve\'s favorite is Purple<br>3. Alice\'s favorite is not Blue<br>4. Carol\'s favorite is not Yellow or Green<br>5. Bob\'s favorite is not Green<br><br>Remaining colors: Blue, Green, Yellow.<br>What is <b>Carol\'s</b> favorite color?',
- opts:['Blue','Green','Yellow','Cannot be determined'],ans:0},
+{cat:'L',diff:2,type:'text',title:'Ist dieser Syllogismus logisch gültig?',
+ q:'Einige Katzen sind schwarz.<br>Einige schwarze Dinge sind Hüte.<br><br><b>Schlussfolgerung:</b> Einige Katzen sind Hüte.',
+ opts:['Gültig','Ungültig – Mittelbegriff nicht ausgeschöpft','Nur für schwarze Katzen gültig','Unbestimmbar'],ans:1,
+ expl:'Fehler des „undistributed middle": Der Mittelbegriff „schwarz" muss nicht dieselben Objekte abdecken – die Schnittmenge schwarzer Katzen und schwarzer Hüte kann leer sein.'},
 
-// ── VERBAL REASONING ──
-{cat:'V',diff:1,type:'text',title:'Complete the analogy:',
- q:'<b>Hot</b> is to <b>Cold</b> &nbsp; as &nbsp; <b>Day</b> is to __',
- opts:['Light','Night','Sun','Evening'],ans:1},
+{cat:'L',diff:3,type:'text',title:'Ordne die Personen der Größe nach:',
+ q:'A ist größer als B.<br>C ist kleiner als B.<br>D ist größer als A.<br><br>Wer ist der <b>Kleinste</b>?',
+ opts:['A','B','C','D'],ans:2,
+ expl:'Größenreihenfolge ableiten: D > A > B > C. C ist der Kleinste.'},
 
-{cat:'V',diff:2,type:'text',title:'Complete the analogy:',
- q:'<b>Painter</b> is to <b>Brush</b> &nbsp; as &nbsp; <b>Writer</b> is to __',
- opts:['Book','Paper','Pen','Story'],ans:2},
+{cat:'L',diff:3,type:'text',title:'Ziehe die logische Schlussfolgerung (Modus Tollens):',
+ q:'Kein Schüler, der die Prüfung bestanden hat, ist faul.<br>Jan ist faul.<br><br>Was folgt <b>zwingend</b>?',
+ opts:['Jan hat die Prüfung bestanden','Jan hat die Prüfung nicht bestanden','Jan ist kein Schüler','Keine Aussage möglich'],ans:1,
+ expl:'Kontrapositive: „bestanden → nicht faul". Umkehrung: „faul → nicht bestanden". Jan ist faul → Jan hat nicht bestanden (Modus Tollens).'},
 
-{cat:'V',diff:3,type:'text',title:'Complete the analogy:',
- q:'<b>Archipelago</b> is to <b>Islands</b> &nbsp; as &nbsp; <b>Constellation</b> is to __',
- opts:['Sky','Planets','Stars','Galaxy'],ans:2},
+{cat:'L',diff:4,type:'text',title:'Box-Rätsel: Genau eine der drei Aussagen ist wahr.',
+ q:'📦 <b>Box A:</b> „Der Preis ist in dieser Box."<br>📦 <b>Box B:</b> „Der Preis ist nicht in dieser Box."<br>📦 <b>Box C:</b> „Der Preis ist nicht in Box A."<br><br>Genau <b>eine</b> Aussage ist wahr. Wo ist der Preis?',
+ opts:['Box A','Box B','Box C','Unbestimmbar'],ans:1,
+ expl:'Test: Preis in B → A=falsch, B=falsch (Widerspruch!), C=wahr → genau 1 wahre Aussage ✓. Preis in A → A=wahr, B=wahr → 2 wahre ✗. Preis in C → B=wahr, C=wahr → 2 wahre ✗.'},
 
-{cat:'V',diff:4,type:'text',title:'Choose the word most similar in meaning to:',
- q:'<b>UBIQUITOUS</b>',
- opts:['Unique','Omnipresent','Ambiguous','Unanimous'],ans:1},
+{cat:'L',diff:3,type:'text',title:'Ritter-und-Schurken-Rätsel:',
+ q:'Ritter sagen immer die Wahrheit, Schurken lügen immer.<br><br>Person A sagt: <em>„Wir sind beide Schurken."</em><br><br>Was ist Person A?',
+ opts:['A ist Ritter, B ist Schurke','A ist Schurke, B ist Ritter','Beide sind Ritter','Beide sind Schurken'],ans:1,
+ expl:'Wenn A ein Ritter wäre, wäre „Wir sind beide Schurken" wahr → Widerspruch (A wäre dann Schurke). Also A = Schurke. A lügt → nicht beide Schurken → B = Ritter.'},
 
-{cat:'V',diff:5,type:'text',title:'Which word does NOT belong with the others?',
- q:'All words except one share a common meaning. Identify the <b>outlier</b>.',
- opts:['Ephemeral','Transient','Perpetual','Fleeting'],ans:2},
+{cat:'L',diff:5,type:'text',title:'Einstein-Rätsel (vereinfacht):',
+ q:'5 Personen, jede mit einer Lieblingsfarbe: Rot, Blau, Grün, Gelb, Lila.<br>• Dave → Rot &nbsp; • Eva → Lila<br>• Alice → nicht Blau &nbsp; • Carol → nicht Gelb, nicht Grün<br>• Bob → nicht Grün<br>Die Restfarben (Blau, Grün, Gelb) verteilen sich auf Alice, Carol, Bob.<br><br>Welche Farbe hat Carol?',
+ opts:['Blau','Grün','Gelb','Unbestimmbar'],ans:0,
+ expl:'Carol ≠ Gelb, Carol ≠ Grün → Carol = Blau. Bob ≠ Grün → Bob = Gelb. Alice = Grün (einzige übrig).'},
 
-// ── SPATIAL REASONING ──
-{cat:'S',diff:1,type:'text',title:'Spatial orientation:',
- q:'You are facing <b>North</b>. You turn <b>90° to the right</b>.<br><br>Which direction are you now facing?',
- opts:['North','East','South','West'],ans:1},
+{cat:'L',diff:3,type:'text',title:'Kontrapositive – welche Aussage folgt zwingend?',
+ q:'Gegeben: <em>„Wenn ein Tier ein Vogel ist, hat es Federn."</em><br><br>Welche Aussage folgt logisch <b>zwingend</b>?',
+ opts:['Wenn es Federn hat, ist es ein Vogel','Wenn es kein Vogel ist, hat es keine Federn','Wenn es keine Federn hat, ist es kein Vogel','Alle Tiere mit Federn können fliegen'],ans:2,
+ expl:'Kontrapositive von P→Q ist ¬Q→¬P (logisch äquivalent). „Keine Federn → kein Vogel". Option A (Umkehrung) und B (Gegenposition) sind nicht logisch äquivalent.'},
 
-{cat:'S',diff:2,type:'text',title:'Follow the rotations:',
- q:'You are facing <b>North</b>. You turn <b>180°</b>, then turn <b>90° to the left</b>.<br><br>Which direction are you now facing?',
- opts:['North','East','South','West'],ans:1},
+{cat:'L',diff:2,type:'text',title:'Deduktiver Syllogismus:',
+ q:'Alle Säugetiere sind Wirbeltiere.<br>Wale sind Säugetiere.<br><br>Welche Schlussfolgerung ist <b>zwingend</b> korrekt?',
+ opts:['Alle Wirbeltiere sind Wale','Wale sind Wirbeltiere','Wale können nicht fliegen','Wirbeltiere sind immer Säugetiere'],ans:1,
+ expl:'Säugetiere ⊆ Wirbeltiere, Wale ⊆ Säugetiere → Wale ⊆ Wirbeltiere. Die anderen Optionen folgen nicht logisch zwingend.'},
 
-{cat:'S',diff:3,type:'text',title:'Calculate the angle:',
- q:'A clock shows <b>3:15</b>. What is the angle between the hour hand and the minute hand?<br><br><em>Hint: The hour hand moves as minutes pass.</em>',
- opts:['0°','7.5°','15°','90°'],ans:1},
+/* ─── RÄUMLICHES DENKEN (8) ─── */
+{cat:'R',diff:1,type:'text',title:'Orientierungssinn:',
+ q:'Du schaust nach <b>Norden</b> und drehst dich <b>90° nach rechts</b>.<br><br>Wo schaust du jetzt hin?',
+ opts:['Norden','Osten','Süden','Westen'],ans:1,
+ expl:'Norden + 90° im Uhrzeigersinn = Osten. (N→O→S→W im Uhrzeigersinn)'},
 
-{cat:'S',diff:4,type:'text',title:'Count all possible squares:',
- q:'How many squares of <b>any size</b> can be found in a 4×4 grid?<br><br><em>(Count 1×1, 2×2, 3×3, and 4×4 squares.)</em>',
- opts:['16','20','25','30'],ans:3},
+{cat:'R',diff:2,type:'text',title:'Mehrfachdrehungen:',
+ q:'Du schaust nach <b>Norden</b>. Du drehst dich <b>180°</b>, danach <b>90° nach links</b>.<br><br>Wo schaust du jetzt hin?',
+ opts:['Norden','Osten','Süden','Westen'],ans:1,
+ expl:'Norden → 180° = Süden. Von Süden, 90° gegen den Uhrzeigersinn (= nach links) = Osten.'},
 
-{cat:'S',diff:5,type:'text',title:'3D spatial reasoning:',
- q:'A cube is painted <b>red</b> on all faces, then cut into <b>27 smaller cubes</b> (3×3×3).<br><br>How many small cubes have <b>exactly 2</b> painted faces?',
- opts:['6','8','12','16'],ans:2},
+{cat:'R',diff:2,type:'text',title:'Spiegelung:',
+ q:'Du stehst vor einem Spiegel und hebst deine <b>rechte Hand</b>.<br><br>Was macht dein Spiegelbild?',
+ opts:['Hebt die rechte Hand','Hebt die linke Hand','Hebt beide Hände','Senkt die rechte Hand'],ans:1,
+ expl:'Ein Spiegel spiegelt die Links-Rechts-Achse. Deine rechte Seite erscheint als die linke Seite des Spiegelbildes.'},
+
+{cat:'R',diff:2,type:'text',title:'Navigation:',
+ q:'Du fährst <b>3 km nach Norden</b>, dann <b>3 km nach Osten</b>, dann <b>3 km nach Süden</b>.<br><br>Wo befindest du dich relativ zum Startpunkt?',
+ opts:['Am Startpunkt','3 km westlich','3 km östlich','3 km nördlich'],ans:2,
+ expl:'Nord (+3 km) und Süd (−3 km) heben sich auf. Verbleibend: 3 km östlich vom Start.'},
+
+{cat:'R',diff:3,type:'text',title:'Uhrzeigerwinkel – exakte Berechnung:',
+ q:'Eine Uhr zeigt <b>3:15 Uhr</b>.<br>Wie groß ist der Winkel zwischen Stunden- und Minutenzeiger?<br><small style="color:#64748b">Hinweis: Der Stundenzeiger bewegt sich 0,5° pro Minute.</small>',
+ opts:['0°','7,5°','15°','22,5°'],ans:1,
+ expl:'Minutenzeiger bei 15 Min: 15×6° = 90°. Stundenzeiger um 3:00: 90°, plus 15 Min × 0,5° = 7,5° → 97,5°. Winkel: 97,5° − 90° = 7,5°.'},
+
+{cat:'R',diff:3,type:'text',title:'Papierfaltung:',
+ q:'Ein quadratisches Blatt wird <b>einmal in der Mitte gefaltet</b> (rechte Seite über die linke).<br>Ein Loch wird <b>oben rechts</b> in die gefaltete Version gestanzt.<br><br>Wie viele Löcher hat das vollständig entfaltete Blatt?',
+ opts:['1 Loch oben rechts','2 Löcher: oben links + oben rechts','2 Löcher: beide links','4 Löcher'],ans:1,
+ expl:'Das Loch durchsticht beide Lagen gleichzeitig. Beim Entfalten: ein Loch oben rechts und das gespiegelte Loch oben links.'},
+
+{cat:'R',diff:4,type:'text',title:'Quadrate zählen:',
+ q:'Wie viele Quadrate <b>aller Größen</b> (1×1, 2×2, 3×3, 4×4) gibt es in einem <b>4×4-Gitter</b>?',
+ opts:['16','20','25','30'],ans:3,
+ expl:'1×1: 4×4=16, 2×2: 3×3=9, 3×3: 2×2=4, 4×4: 1×1=1. Gesamt: 16+9+4+1 = 30.'},
+
+{cat:'R',diff:4,type:'text',title:'Bemalter Würfel – 3D-Vorstellung:',
+ q:'Ein Würfel wird <b>an allen 6 Seiten rot bemalt</b>, dann in <b>27 kleine Würfelchen (3×3×3)</b> geschnitten.<br><br>Wie viele Würfelchen haben genau <b>2 rote Flächen</b>?',
+ opts:['6','8','12','16'],ans:2,
+ expl:'Würfelchen mit genau 2 bemalten Flächen sitzen auf den 12 Kanten (ohne Ecken): 12 Kanten × 1 Würfelchen = 12. (Ecken: 8 mit 3 Flächen; Seitenmitten: 6 mit 1 Fläche; Kern: 1 mit 0 Flächen)'},
+
+/* ─── VERBALE ANALOGIEN (12) ─── */
+{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Arzt','Krankenhaus','Lehrer','___'],
+ opts:['Schüler','Schule','Buch','Unterricht'],ans:1,
+ expl:'Ein Arzt arbeitet in einem Krankenhaus; ein Lehrer arbeitet in einer Schule. (Person ↔ Arbeitsort)'},
+
+{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Auge','Sehen','Ohr','___'],
+ opts:['Hören','Riechen','Sprechen','Anfassen'],ans:0,
+ expl:'Das Auge ist das Organ des Sehens; das Ohr ist das Organ des Hörens. (Sinnesorgan ↔ Sinneswahrnehmung)'},
+
+{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Hund','Bellen','Katze','___'],
+ opts:['Knurren','Zischen','Miauen','Schnurren'],ans:2,
+ expl:'Hunde bellen; Katzen miauen – der jeweils charakteristische Laut des Tieres. (Tier ↔ typischer Laut)'},
+
+{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Vogel','Nest','Biene','___'],
+ opts:['Honig','Stachel','Bienenstock','Blume'],ans:2,
+ expl:'Der Vogel lebt im Nest; die Biene lebt im Bienenstock. (Tier ↔ Wohnstätte)'},
+
+{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Buch','Kapitel','Haus','___'],
+ opts:['Fenster','Dach','Keller','Zimmer'],ans:3,
+ expl:'Ein Buch gliedert sich in Kapitel; ein Haus gliedert sich in Zimmer. (Ganzes ↔ Bestandteil)'},
+
+{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Bäcker','Brot','Schreiner','___'],
+ opts:['Holz','Möbel','Säge','Nagel'],ans:1,
+ expl:'Der Bäcker produziert Brot; der Schreiner produziert Möbel. (Handwerker ↔ erzeugtes Produkt)'},
+
+{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Tag','Nacht','Heiß','___'],
+ opts:['Warm','Glut','Kalt','Kühl'],ans:2,
+ expl:'Tag und Nacht sind absolute Gegensätze; Heiß und Kalt sind entsprechende Gegensätze. (Gegensatzpaar)'},
+
+{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Messer','Schneiden','Pinsel','___'],
+ opts:['Farbe','Leinwand','Malen','Zeichnen'],ans:2,
+ expl:'Ein Messer ist ein Werkzeug zum Schneiden; ein Pinsel ist ein Werkzeug zum Malen. (Werkzeug ↔ Funktion)'},
+
+{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Hunger','Essen','Müdigkeit','___'],
+ opts:['Bett','Schlafen','Ausruhen','Träumen'],ans:1,
+ expl:'Hunger befriedigt man durch Essen; Müdigkeit überwindet man durch Schlafen. (Mangel ↔ Abhilfe)'},
+
+{cat:'V',diff:3,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Dirigent','Orchester','Trainer','___'],
+ opts:['Spielfeld','Schiedsrichter','Trophäe','Mannschaft'],ans:3,
+ expl:'Der Dirigent leitet das Orchester; der Trainer leitet die Mannschaft. (Leiter ↔ geleitete Gruppe)'},
+
+{cat:'V',diff:3,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Frühling','Sommer','Morgen','___'],
+ opts:['Nacht','Abend','Mittag','Tag'],ans:2,
+ expl:'Auf den Frühling folgt der Sommer (nächste Jahreszeit); auf den Morgen folgt der Mittag (nächste Tageszeit). (Sequenz ↔ Nachfolger)'},
+
+{cat:'V',diff:3,type:'analogy',title:'Vervollständige die Analogie:',
+ analogy:['Gärtner','Garten','Bibliothekar','___'],
+ opts:['Bücher','Lesen','Bibliothek','Wissen'],ans:2,
+ expl:'Der Gärtner pflegt den Garten; der Bibliothekar verwaltet die Bibliothek. (Person ↔ Verantwortungsbereich)'},
 ];
 
-// ═══════════════════ STATE ═══════════════════
-const state={screen:'landing',qi:0,answers:[],times:[],selected:-1,tStart:0,qStart:0,totalTime:0};
+/* ===================== STATE ===================== */
+const state={
+  screen:'landing',userName:'',
+  qi:0,
+  answers:Array(FRAGEN.length).fill(-1),
+  flagged:new Set(),
+  tStart:0,vorherigeZeit:0,
+  paused:false,pauseStart:0,
+  gesamtZeit:0
+};
 
-// ═══════════════════ RENDERING ═══════════════════
+/* ===================== STORAGE ===================== */
+function storageKey(n){return'iqtest_v5_'+n.toLowerCase().trim();}
+function saveProgress(){
+  if(!state.userName)return;
+  const elapsed=Math.floor((Date.now()-state.tStart)/1000);
+  try{
+    localStorage.setItem(storageKey(state.userName),JSON.stringify({
+      qi:state.qi,answers:[...state.answers],flagged:[...state.flagged],
+      akkumZeit:elapsed,savedAt:new Date().toISOString(),name:state.userName
+    }));
+  }catch(e){}
+}
+function loadProgress(n){try{const d=localStorage.getItem(storageKey(n));return d?JSON.parse(d):null;}catch(e){return null;}}
+function clearProgress(n){try{localStorage.removeItem(storageKey(n));}catch(e){}}
+function getAllSaves(){
+  const s=[];
+  try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('iqtest_v5_')){const d=JSON.parse(localStorage.getItem(k));if(d)s.push(d);}}}catch(e){}
+  return s.sort((a,b)=>new Date(b.savedAt)-new Date(a.savedAt));
+}
+
+/* ===================== HELPERS ===================== */
+const app=document.getElementById('app');
+let timerInt;
+
+function showToast(msg,dur=2200){
+  const t=document.getElementById('toast');
+  if(!t)return;t.textContent=msg;t.classList.add('show');
+  clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.classList.remove('show'),dur);
+}
+
 function shapeSpan(s){
-  const ch=SH[s.t];
-  const char=s.f!==false?ch[0]:ch[1];
-  return `<span class="shape" style="color:${s.c};font-size:${s.sz||34}px;line-height:1">${char}</span>`;
+  const ch=SH[s.t]||SH.c;const c=s.f!==false?ch[0]:ch[1];
+  return`<span class="shape" style="color:${s.c};font-size:${s.sz||34}px;line-height:1">${c}</span>`;
 }
-
-function cellDiv(shapes,size=72){
-  if(!shapes) return `<div class="cell cell-missing" style="width:${size}px;height:${size}px">?</div>`;
-  return `<div class="cell" style="width:${size}px;height:${size}px">${shapes.map(s=>shapeSpan(s)).join('')}</div>`;
+function cellDiv(shapes,sz=66){
+  if(!shapes)return`<div class="cell cell-missing" style="width:${sz}px;height:${sz}px">?</div>`;
+  return`<div class="cell" style="width:${sz}px;height:${sz}px">${shapes.map(s=>shapeSpan(s)).join('')}</div>`;
 }
-
-function renderSequence(seq){
+function renderSeq(seq){
   let h='<div class="q-visual">';
-  seq.forEach((cell,i)=>{
-    h+=cellDiv(cell);
-    if(i<seq.length-1) h+='';
-  });
-  h+='<span class="arrow">→</span>'+cellDiv(null);
-  h+='</div>';
-  return h;
+  seq.forEach(c=>{h+=cellDiv(c);});
+  return h+'<span style="color:#94a3b8;font-size:1.4rem;margin:0 4px">→</span>'+cellDiv(null)+'</div>';
 }
-
-function renderMatrix(grid){
-  const rows=grid.length;
-  let h=`<div class="q-visual"><div class="matrix-grid matrix-${rows}">`;
-  grid.forEach(row=>{
-    row.forEach(cell=>{h+=cellDiv(cell);});
-  });
-  h+='</div></div>';
-  return h;
+function renderMat(grid){
+  let h='<div class="q-visual"><div class="matrix-grid matrix-3">';
+  grid.forEach(r=>r.forEach(c=>{h+=cellDiv(c);}));
+  return h+'</div></div>';
 }
-
-function renderOptions(q){
-  const isVis=q.type!=='text';
-  const n=q.opts.length;
-  const cls=n<=4?'opts-4':'opts-6';
-  const labels='ABCDEF'.split('');
+function renderAnalogy(q){
+  const [w1,w2,w3]=q.analogy;
+  return`<div class="analogy-display">
+    <span class="analogy-word">${w1}</span>
+    <span class="analogy-sep">:</span>
+    <span class="analogy-word">${w2}</span>
+    <span class="analogy-eq">&nbsp;=&nbsp;</span>
+    <span class="analogy-word">${w3}</span>
+    <span class="analogy-sep">:</span>
+    <span class="analogy-blank">?</span>
+  </div>`;
+}
+function renderOpts(q){
+  const vis=q.type!=='text'&&q.type!=='analogy';
+  const n=q.opts.length;const cls=n<=2?'opts-2':'opts-4';
+  const lbl=['A','B','C','D','E','F'];
   let h=`<div class="opts-grid ${cls}">`;
-  q.opts.forEach((opt,i)=>{
-    const sel=state.selected===i?' selected':'';
-    const content=isVis?opt.map(s=>shapeSpan(s)).join(' '):opt;
+  q.opts.forEach((o,i)=>{
+    const sel=state.answers[state.qi]===i||state.selected===i?' selected':'';
+    const cont=vis?o.map(s=>shapeSpan(s)).join(' '):o;
     h+=`<button class="opt-btn${sel}" onclick="selectOpt(${i})">
-      <span class="opt-label">${labels[i]}</span>
-      <span class="opt-content">${content}</span>
+      <span class="opt-label">${lbl[i]}</span>
+      <span class="opt-content">${cont}</span>
     </button>`;
   });
-  h+='</div>';
-  return h;
+  return h+'</div>';
 }
 
-// ═══════════════════ SCREENS ═══════════════════
-const app=document.getElementById('app');
+/* ===================== CONFETTI ===================== */
+function launchConfetti(){
+  const canvas=document.getElementById('confettiCanvas');
+  if(!canvas)return;
+  canvas.width=innerWidth;canvas.height=innerHeight;
+  const ctx=canvas.getContext('2d');
+  const cols=['#818cf8','#c084fc','#f0abfc','#4ade80','#fbbf24','#f472b6','#34d399'];
+  const pts=Array.from({length:140},()=>({
+    x:Math.random()*canvas.width,y:-20-Math.random()*200,
+    w:7+Math.random()*8,h:4+Math.random()*6,
+    col:cols[Math.floor(Math.random()*cols.length)],
+    rot:Math.random()*360,
+    vx:(Math.random()-.5)*3,vy:2+Math.random()*3,vr:(Math.random()-.5)*8
+  }));
+  let fr=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    let alive=false;
+    pts.forEach(p=>{
+      if(p.y<canvas.height+20){alive=true;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.04;
+        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
+        ctx.fillStyle=p.col;ctx.globalAlpha=Math.max(0,1-p.y/canvas.height);
+        ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();}
+    });
+    if(alive&&fr++<240)requestAnimationFrame(draw);else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  draw();
+}
 
-function showLanding(){
-  state.screen='landing';
+/* ===================== LANDING ===================== */
+function zeigeLanding(){
+  state.screen='landing';clearInterval(timerInt);
+  const saves=getAllSaves();
+  const sh=saves.length?`<div class="saves-list"><h4>Gespeicherte Fortschritte</h4>${
+    saves.map(s=>`<div class="save-item" onclick="selectSave('${s.name.replace(/'/g,"\\'")}')">
+      <span class="save-name">👤 ${s.name}</span>
+      <span class="save-meta">${s.answers?s.answers.filter(a=>a!==-1).length:s.qi}/${FRAGEN.length} Fragen · ${new Date(s.savedAt).toLocaleDateString('de-DE')}</span>
+    </div>`).join('')
+  }</div>`:'';
   app.innerHTML=`<div class="landing">
-    <h1>🧠 IQ Assessment</h1>
-    <p class="sub">Standardized Intelligence Quotient Estimation</p>
-    <div class="desc">
-      <p>This test estimates your IQ using question types from validated psychometric instruments including <b>Raven's Progressive Matrices</b>, <b>Wechsler Adult Intelligence Scale (WAIS)</b>, and <b>Stanford-Binet</b> paradigms.</p>
-      <br><p>Your score is calculated using <b>Item Response Theory (IRT)</b> weighted scoring, mapped to the standard IQ scale (μ=100, σ=15) via probit transformation. Processing speed is factored in.</p>
-    </div>
-    <div class="info-grid">
-      <div class="info-card"><div class="num">30</div><div class="lbl">Questions</div></div>
-      <div class="info-card"><div class="num">~20</div><div class="lbl">Minutes</div></div>
-      <div class="info-card"><div class="num">5</div><div class="lbl">Categories</div></div>
-    </div>
-    <div class="cats">
-      <span class="cat-tag">🔷 Pattern Recognition</span>
-      <span class="cat-tag">🔢 Numerical Reasoning</span>
-      <span class="cat-tag">🧩 Logical Reasoning</span>
-      <span class="cat-tag">📝 Verbal Reasoning</span>
-      <span class="cat-tag">📐 Spatial Reasoning</span>
-    </div>
-    <button class="btn btn-primary" onclick="startTest()">Start Test →</button>
-    <p style="color:#64748b;font-size:.8rem;margin-top:16px">No time limit per question. Take your time.</p>
-  </div>`;
+  <h1>🧠 IQ-Intelligenztest</h1>
+  <p class="sub">Standardisierter Online-IQ-Test · Deutsch · Wissenschaftlich kalibriert</p>
+  <div class="desc">
+    <p>Dieser Test schätzt deinen IQ anhand von Aufgaben aus <b>Raven Progressive Matrices</b>, <b>WAIS-IV</b> und dem <b>Stanford-Binet-Verfahren</b>: Mustererkennung, Zahlenreihen, logisches Denken, räumliche Vorstellung und verbale Analogien.</p><br>
+    <p>Auswertung via IRT-gewichteter Punktzahl und Probit-Normierung auf die Wechsler-Skala (μ=100, σ=15). Falsche Antworten werden nach dem Test mit Erklärungen gezeigt. Du kannst Fragen markieren, überspringen und zurückgehen.</p>
+  </div>
+  <div class="info-grid">
+    <div class="info-card"><div class="num">48</div><div class="lbl">Fragen</div></div>
+    <div class="info-card"><div class="num">~30</div><div class="lbl">Minuten</div></div>
+    <div class="info-card"><div class="num">5</div><div class="lbl">Kategorien</div></div>
+  </div>
+  <div class="cats">
+    <span class="cat-tag" style="background:rgba(59,130,246,.12);color:#93c5fd;border-color:rgba(59,130,246,.25)">🔷 Mustererkennung (8)</span>
+    <span class="cat-tag" style="background:rgba(34,197,94,.12);color:#86efac;border-color:rgba(34,197,94,.25)">🔢 Numerik (10)</span>
+    <span class="cat-tag" style="background:rgba(249,115,22,.12);color:#fdba74;border-color:rgba(249,115,22,.25)">🧩 Logik (10)</span>
+    <span class="cat-tag" style="background:rgba(236,72,153,.12);color:#f9a8d4;border-color:rgba(236,72,153,.25)">📐 Räumliches Denken (8)</span>
+    <span class="cat-tag" style="background:rgba(139,92,246,.12);color:#c4b5fd;border-color:rgba(139,92,246,.25)">💬 Verbale Analogien (12)</span>
+  </div>
+  <button class="btn btn-primary" onclick="zeigeNameneingabe()">Test beginnen →</button>
+  <p style="color:#64748b;font-size:.77rem;margin-top:14px">Kein Zeitlimit pro Frage · Fortschritt automatisch gespeichert · Zurückgehen möglich · Fragen markierbar</p>
+  ${sh}
+</div>`;
 }
 
-function startTest(){
-  state.screen='test';state.qi=0;state.answers=[];state.times=[];state.selected=-1;
-  state.tStart=Date.now();state.qStart=Date.now();
-  showQuestion();
+/* ===================== NAME SCREEN ===================== */
+function zeigeNameneingabe(){
+  state.screen='name';
+  app.innerHTML=`<div class="name-screen">
+  <h2>Wer bist du?</h2>
+  <p>Gib deinen Namen ein. Jede Person hat einen eigenen Fortschritt.<br>Bei Rückkehr kannst du genau dort weitermachen, wo du aufgehört hast.</p>
+  <input class="name-input" id="nameInput" type="text" placeholder="Dein Name oder Spitzname" maxlength="40"
+    onkeydown="if(event.key==='Enter')bestaetigeNamen()">
+  <div class="btn-row">
+    <button class="btn btn-secondary" onclick="zeigeLanding()">← Zurück</button>
+    <button class="btn btn-primary" onclick="bestaetigeNamen()">Weiter →</button>
+  </div>
+</div>`;
+  document.getElementById('nameInput').focus();
 }
 
-function showQuestion(){
-  const q=QUESTIONS[state.qi];
-  const pct=((state.qi)/QUESTIONS.length*100).toFixed(0);
-  const elapsed=Math.floor((Date.now()-state.tStart)/1000);
-  const mins=String(Math.floor(elapsed/60)).padStart(2,'0');
-  const secs=String(elapsed%60).padStart(2,'0');
+window.selectSave=function(name){
+  const inp=document.getElementById('nameInput');
+  if(inp){inp.value=name;inp.focus();}
+  else{state.userName=name;const saved=loadProgress(name);if(saved&&saved.qi>0&&saved.qi<FRAGEN.length)zeigeFortfahren(name,saved);else{zeigeNameneingabe();setTimeout(()=>{document.getElementById('nameInput').value=name;},50);}}
+};
 
-  let visual='';
-  if(q.type==='seq') visual=renderSequence(q.seq);
-  else if(q.type==='matrix') visual=renderMatrix(q.grid);
+window.bestaetigeNamen=function(){
+  const inp=document.getElementById('nameInput');
+  const name=inp?inp.value.trim():'';
+  if(!name){if(inp){inp.style.borderColor='#ef4444';inp.focus();}return;}
+  state.userName=name;
+  const saved=loadProgress(name);
+  if(saved&&saved.answers&&saved.answers.filter(a=>a!==-1).length>0)zeigeFortfahren(name,saved);
+  else starteTest(true);
+};
+
+/* ===================== CONTINUE SCREEN ===================== */
+function zeigeFortfahren(name,saved){
+  const cnt=saved.answers?saved.answers.filter(a=>a!==-1).length:saved.qi;
+  const m=Math.floor(saved.akkumZeit/60),s=saved.akkumZeit%60;
+  app.innerHTML=`<div class="continue-screen">
+  <h2>👋 Willkommen zurück, ${name}!</h2>
+  <p>Du hast einen gespeicherten Fortschritt:</p>
+  <div class="ci-box">
+    <div class="ci-row"><span>Beantwortete Fragen</span><span class="ci-val">${cnt} / ${FRAGEN.length}</span></div>
+    <div class="ci-row"><span>Investierte Zeit</span><span class="ci-val">${m}:${String(s).padStart(2,'0')} Min</span></div>
+    <div class="ci-row"><span>Gespeichert am</span><span class="ci-val">${new Date(saved.savedAt).toLocaleDateString('de-DE',{day:'2-digit',month:'short',year:'numeric'})}</span></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-danger" onclick="starteTest(true)">🔄 Neu starten</button>
+    <button class="btn btn-primary" onclick="fortsetzTest()">▶ Fortfahren</button>
+  </div>
+</div>`;
+}
+
+window.fortsetzTest=function(){
+  const saved=loadProgress(state.userName);
+  if(!saved)return starteTest(true);
+  state.qi=Math.min(saved.qi,FRAGEN.length-1);
+  state.answers=Array(FRAGEN.length).fill(-1);
+  if(saved.answers)saved.answers.forEach((a,i)=>{if(i<FRAGEN.length)state.answers[i]=a;});
+  state.flagged=new Set(saved.flagged||[]);
+  state.vorherigeZeit=saved.akkumZeit||0;
+  state.tStart=Date.now()-(state.vorherigeZeit*1000);
+  state.screen='test';
+  zeigeFrage();
+};
+
+window.starteTest=function(neu=true){
+  if(neu){clearProgress(state.userName);state.qi=0;state.answers=Array(FRAGEN.length).fill(-1);state.flagged=new Set();state.vorherigeZeit=0;}
+  state.tStart=Date.now();state.screen='test';
+  zeigeFrage();
+};
+
+/* ===================== TEST RENDERING ===================== */
+function zeigeFrage(){
+  const q=FRAGEN[state.qi];
+  const pct=(state.qi/FRAGEN.length*100).toFixed(1);
+  const el=Math.floor((Date.now()-state.tStart)/1000);
+  const tm=`${String(Math.floor(el/60)).padStart(2,'0')}:${String(el%60).padStart(2,'0')}`;
+  const stars='★'.repeat(q.diff)+'☆'.repeat(5-q.diff);
+  const isLast=state.qi===FRAGEN.length-1;
+  const hasAns=state.answers[state.qi]!==-1;
+  const isFlagged=state.flagged.has(state.qi);
+  const answered=state.answers.filter(a=>a!==-1).length;
+
+  let vis='';
+  if(q.type==='seq')vis=renderSeq(q.seq);
+  else if(q.type==='matrix')vis=renderMat(q.grid);
+  else if(q.type==='analogy')vis=renderAnalogy(q);
+  const qt=q.q?`<div style="margin-top:13px;padding:13px 16px;background:#f8fafc;border-radius:12px;font-size:1.02rem;line-height:1.8">${q.q}</div>`:'';
 
   app.innerHTML=`<div class="test-container">
-    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-    <div class="test-header">
-      <span class="q-counter">Question ${state.qi+1} of ${QUESTIONS.length}</span>
-      <span class="q-cat" data-cat="${q.cat}">${CAT_NAMES[q.cat]}</span>
-      <span class="timer" id="timer">⏱ ${mins}:${secs}</span>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:8px;flex-wrap:wrap">
+    <span style="color:#64748b;font-size:.78rem">👤 ${state.userName} &nbsp;·&nbsp; ${answered}/${FRAGEN.length} beantwortet</span>
+    <span style="color:#64748b;font-size:.78rem">💾 Auto-Speicherung aktiv</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+  <div class="test-header">
+    <div class="test-header-left">
+      <span class="q-counter">Frage ${state.qi+1} / ${FRAGEN.length}</span>
+      <span class="q-cat" data-cat="${q.cat}">${KAT[q.cat].icon} ${KAT[q.cat].name}</span>
+      <span class="diff-stars" style="color:#f59e0b" title="Schwierigkeit">${stars}</span>
     </div>
-    <div class="q-card">
-      <div class="q-title">${q.title}${q.q?'<div style="margin-top:14px;padding:18px;background:#f8fafc;border-radius:12px;font-size:1.1rem;line-height:1.8">'+q.q+'</div>':''}</div>
-      ${visual}
-      ${renderOptions(q)}
+    <div class="test-header-right">
+      <span class="timer" id="timer">⏱ ${tm}</span>
     </div>
-    <div class="nav-row">
-      <button class="btn btn-primary" onclick="nextQ()" id="nextBtn" ${state.selected<0?'style="opacity:.4;pointer-events:none"':''}>
-        ${state.qi===QUESTIONS.length-1?'Finish Test':'Next →'}
+  </div>
+  <div class="q-card">
+    <div class="q-title">${q.title}${qt}</div>
+    ${vis}${renderOpts(q)}
+  </div>
+  <div class="nav-row">
+    <div class="nav-left">
+      ${state.qi>0?`<button class="btn btn-secondary" onclick="vorherigeFrageFn()" style="padding:11px 18px;font-size:.9rem">← Zurück</button>`:'<span></span>'}
+    </div>
+    <div class="nav-right">
+      <button class="btn-icon ${isFlagged?'flagged':''}" onclick="toggleFlag()" title="${isFlagged?'Markierung entfernen':'Frage markieren'}">🚩 ${isFlagged?'Markiert':'Markieren'}</button>
+      <button class="btn-icon" onclick="zeigeUebersicht()" title="Alle Fragen anzeigen">📋 Übersicht</button>
+      <button class="btn-icon" onclick="pauseTest()" title="Test pausieren">⏸ Pause</button>
+      <button class="btn btn-primary" onclick="naechsteFrage()" id="nextBtn" ${!hasAns?'style="opacity:.5"':''}>
+        ${isLast?'Test abschließen ✓':'Weiter →'}
       </button>
     </div>
-  </div>`;
-  startTimer();
-}
+  </div>
+</div>`;
 
-let timerInterval;
-function startTimer(){
-  clearInterval(timerInterval);
-  timerInterval=setInterval(()=>{
-    const el=document.getElementById('timer');
-    if(!el)return clearInterval(timerInterval);
-    const elapsed=Math.floor((Date.now()-state.tStart)/1000);
-    el.textContent=`⏱ ${String(Math.floor(elapsed/60)).padStart(2,'0')}:${String(elapsed%60).padStart(2,'0')}`;
+  clearInterval(timerInt);
+  timerInt=setInterval(()=>{
+    const el=document.getElementById('timer');if(!el)return clearInterval(timerInt);
+    const e=Math.floor((Date.now()-state.tStart)/1000);
+    el.textContent=`⏱ ${String(Math.floor(e/60)).padStart(2,'0')}:${String(e%60).padStart(2,'0')}`;
   },1000);
 }
 
+/* ===================== INTERACTIONS ===================== */
 window.selectOpt=function(i){
-  state.selected=i;
-  document.querySelectorAll('.opt-btn').forEach((b,j)=>{
-    b.className='opt-btn'+(j===i?' selected':'');
-  });
-  const nb=document.getElementById('nextBtn');
-  if(nb){nb.style.opacity='1';nb.style.pointerEvents='auto';}
+  state.answers[state.qi]=i;
+  document.querySelectorAll('.opt-btn').forEach((b,j)=>{b.className='opt-btn'+(j===i?' selected':'');});
+  const nb=document.getElementById('nextBtn');if(nb){nb.style.opacity='1';}
 };
 
-window.nextQ=function(){
-  if(state.selected<0)return;
-  state.answers.push(state.selected);
-  state.times.push((Date.now()-state.qStart)/1000);
-  state.selected=-1;
-  state.qi++;
-  if(state.qi>=QUESTIONS.length){
-    state.totalTime=(Date.now()-state.tStart)/1000;
-    clearInterval(timerInterval);
-    showResults();
+window.naechsteFrage=function(){
+  const isLast=state.qi===FRAGEN.length-1;
+  if(isLast){
+    const skipped=state.answers.filter(a=>a===-1).length;
+    if(skipped>0)return zeigeAbschlussModal(skipped);
+    finaliziereTest();
   }else{
-    state.qStart=Date.now();
-    showQuestion();
+    saveProgress();state.qi++;zeigeFrage();
   }
 };
 
-// ═══════════════════ SCORING (IRT-based) ═══════════════════
+window.vorherigeFrageFn=function(){
+  if(state.qi===0)return;
+  saveProgress();state.qi--;zeigeFrage();
+};
+
+window.toggleFlag=function(){
+  if(state.flagged.has(state.qi))state.flagged.delete(state.qi);
+  else state.flagged.add(state.qi);
+  zeigeFrage();
+};
+
+/* ===================== OVERVIEW PANEL ===================== */
+function zeigeUebersicht(){
+  const answered=state.answers.filter(a=>a!==-1).length;
+  const dots=FRAGEN.map((q,i)=>{
+    const isAns=state.answers[i]!==-1;
+    const isFlag=state.flagged.has(i);const isCur=i===state.qi;
+    const colHex=KAT[q.cat].col;
+    const bg=isAns?colHex+'bb':'rgba(255,255,255,.07)';
+    const cls=['q-dot',isAns?'answered':'unanswered',isFlag?'flagged':'',isCur?'current':''].filter(Boolean).join(' ');
+    return`<div class="${cls}" style="background:${bg}" onclick="jumpToQ(${i})" title="Frage ${i+1}: ${KAT[q.cat].name}">${i+1}</div>`;
+  }).join('');
+  const ov=document.createElement('div');ov.className='overlay';ov.id='ovOverlay';
+  ov.innerHTML=`<div class="overview-card">
+    <h3>📋 Fragenübersicht</h3>
+    <p class="ov-sub">${answered} von ${FRAGEN.length} beantwortet · ${state.flagged.size} markiert</p>
+    <div class="q-grid">${dots}</div>
+    <div class="ov-legend">
+      <div class="ov-leg"><div class="ov-leg-dot" style="background:rgba(255,255,255,.15)"></div>Noch offen</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="background:#818cf8"></div>Beantwortet</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="background:rgba(255,255,255,.15);border:2px solid #f97316"></div>Markiert (🚩)</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="outline:3px solid #fff;outline-offset:2px;background:#475569"></div>Aktuelle Frage</div>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center">
+      <button class="btn btn-secondary" onclick="schliessOv(-1)" style="padding:10px 24px;font-size:.9rem">Schließen</button>
+    </div>
+  </div>`;
+  document.body.appendChild(ov);
+}
+
+window.jumpToQ=function(i){
+  document.getElementById('ovOverlay')?.remove();
+  saveProgress();state.qi=i;zeigeFrage();
+};
+window.schliessOv=function(goto){
+  document.getElementById('ovOverlay')?.remove();
+  if(goto>=0){saveProgress();state.qi=goto;zeigeFrage();}
+};
+
+/* ===================== PAUSE ===================== */
+function pauseTest(){
+  state.paused=true;state.pauseStart=Date.now();
+  clearInterval(timerInt);saveProgress();
+  const el=Math.floor((Date.now()-state.tStart)/1000);
+  const m=Math.floor(el/60),s=el%60;
+  const ov=document.createElement('div');ov.className='overlay';ov.id='pauseOv';
+  ov.innerHTML=`<div class="overlay-card">
+    <h2>⏸ Pausiert</h2>
+    <p>Dein Fortschritt wurde gespeichert.<br>Bisherige Zeit: <b>${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}</b></p>
+    <div class="btn-col">
+      <button class="btn btn-primary" onclick="resumeTest()" style="width:220px">▶ Fortfahren</button>
+      <button class="btn btn-secondary" onclick="zeigeLanding()" style="width:220px;padding:11px 24px;font-size:.9rem">← Zum Start</button>
+    </div>
+  </div>`;
+  document.body.appendChild(ov);
+}
+
+window.resumeTest=function(){
+  const ov=document.getElementById('pauseOv');ov?.remove();
+  const pausedDur=Date.now()-state.pauseStart;
+  state.tStart+=pausedDur;state.paused=false;
+  zeigeFrage();
+};
+
+/* ===================== FINISH MODAL ===================== */
+function zeigeAbschlussModal(skipped){
+  clearInterval(timerInt);
+  const ov=document.createElement('div');ov.className='overlay';ov.id='abschlussOv';
+  ov.innerHTML=`<div class="overlay-card">
+    <h2>⚠️ ${skipped} offen</h2>
+    <p>Du hast noch ${skipped} Frage${skipped>1?'n':''} nicht beantwortet.<br>Nicht beantwortete Fragen werden als falsch gewertet.</p>
+    <div class="btn-col">
+      <button class="btn btn-secondary" onclick="pruefeOffene()" style="width:240px">← Offene prüfen</button>
+      <button class="btn btn-primary" onclick="finaliziereTest()" style="width:240px">Trotzdem abschließen</button>
+    </div>
+  </div>`;
+  document.body.appendChild(ov);
+}
+
+window.pruefeOffene=function(){
+  document.getElementById('abschlussOv')?.remove();
+  // Find first unanswered
+  const first=state.answers.findIndex(a=>a===-1);
+  if(first>=0){state.qi=first;zeigeFrage();}else zeigeFrage();
+};
+
+function finaliziereTest(){
+  document.getElementById('abschlussOv')?.remove();
+  clearInterval(timerInt);
+  state.gesamtZeit=(Date.now()-state.tStart)/1000;
+  clearProgress(state.userName);
+  zeigeErgebnis();
+}
+
+/* ===================== PROBIT / MATH ===================== */
 function probit(p){
-  // Rational approximation of inverse normal CDF (Peter Acklam)
-  const a1=-3.969683028665376e1,a2=2.209460984245205e2,a3=-2.759285104469687e2,
-    a4=1.383577518672690e2,a5=-3.066479806614716e1,a6=2.506628277459239e0;
-  const b1=-5.447609879822406e1,b2=1.615858368580409e2,b3=-1.556989798598866e2,
-    b4=6.680131188771972e1,b5=-1.328068155288572e1;
-  const c1=-7.784894002430293e-3,c2=-3.223964580411365e-1,c3=-2.400758277161838e0,
-    c4=-2.549732539343734e0,c5=4.374664141464968e0,c6=2.938163982698783e0;
-  const d1=7.784695709041462e-3,d2=3.224671290700398e-1,d3=2.445134137142996e0,
-    d4=3.754408661907416e0;
-  const pL=0.02425,pH=1-pL;
-  let q,r;
-  if(p<pL){q=Math.sqrt(-2*Math.log(p));return(((((c1*q+c2)*q+c3)*q+c4)*q+c5)*q+c6)/(((( d1*q+d2)*q+d3)*q+d4)*q+1);}
+  const a1=-3.969683028665376e1,a2=2.209460984245205e2,a3=-2.759285104469687e2,a4=1.383577518672690e2,a5=-3.066479806614716e1,a6=2.506628277459239e0;
+  const b1=-5.447609879822406e1,b2=1.615858368580409e2,b3=-1.556989798598866e2,b4=6.680131188771972e1,b5=-1.328068155288572e1;
+  const c1=-7.784894002430293e-3,c2=-3.223964580411365e-1,c3=-2.400758277161838e0,c4=-2.549732539343734e0,c5=4.374664141464968e0,c6=2.938163982698783e0;
+  const d1=7.784695709041462e-3,d2=3.224671290700398e-1,d3=2.445134137142996e0,d4=3.754408661907416e0;
+  const pL=0.02425,pH=1-pL;let q,r;
+  if(p<pL){q=Math.sqrt(-2*Math.log(p));return(((((c1*q+c2)*q+c3)*q+c4)*q+c5)*q+c6)/((((d1*q+d2)*q+d3)*q+d4)*q+1);}
   else if(p<=pH){q=p-0.5;r=q*q;return(((((a1*r+a2)*r+a3)*r+a4)*r+a5)*r+a6)*q/(((((b1*r+b2)*r+b3)*r+b4)*r+b5)*r+1);}
   else{q=Math.sqrt(-2*Math.log(1-p));return-(((((c1*q+c2)*q+c3)*q+c4)*q+c5)*q+c6)/((((d1*q+d2)*q+d3)*q+d4)*q+1);}
 }
+function erf(x){const t=1/(1+0.3275911*Math.abs(x));const p=t*(0.254829592+t*(-0.284496736+t*(1.421413741+t*(-1.453152027+t*1.061405429))));const r=1-p*Math.exp(-x*x);return x>=0?r:-r;}
+function normalPDF(x,mu=100,sig=15){const z=(x-mu)/sig;return Math.exp(-.5*z*z)/(sig*Math.sqrt(2*Math.PI));}
 
-function normalPDF(x,mu=0,sigma=1){
-  const z=(x-mu)/sigma;
-  return Math.exp(-0.5*z*z)/(sigma*Math.sqrt(2*Math.PI));
-}
-
-function calculateResults(){
-  let weightedScore=0,maxWeighted=0;
-  const catScores={P:{got:0,max:0},N:{got:0,max:0},L:{got:0,max:0},V:{got:0,max:0},S:{got:0,max:0}};
-  let correctCount=0;
-
-  QUESTIONS.forEach((q,i)=>{
-    const w=q.diff;
-    maxWeighted+=w;
-    catScores[q.cat].max+=w;
-    if(state.answers[i]===q.ans){
-      weightedScore+=w;
-      catScores[q.cat].got+=w;
-      correctCount++;
-    }
+/* ===================== SCORING ===================== */
+function berechneErgebnis(){
+  let gew=0,maxG=0;
+  const kat={};Object.keys(KAT).forEach(k=>{kat[k]={g:0,m:0};});
+  let richtig=0;
+  FRAGEN.forEach((q,i)=>{
+    const w=q.diff;maxG+=w;kat[q.cat].m+=w;
+    if(state.answers[i]===q.ans){gew+=w;kat[q.cat].g+=w;richtig++;}
   });
-
-  const rawPct=weightedScore/maxWeighted;
-  const clamped=Math.max(0.01,Math.min(0.99,rawPct));
-
-  // Calibration: shift so that ~38% weighted score maps to IQ 100
-  const SHIFT=0.30;
-  const SCALE=1.3;
-  const z=(probit(clamped)+SHIFT)*SCALE;
+  const pct=gew/maxG,cl=Math.max(0.02,Math.min(0.98,pct));
+  const z=(probit(cl)+0.05)*1.0;
   let iq=Math.round(100+15*z);
-
-  // Processing speed adjustment (-3 to +3)
-  const avgTime=state.times.reduce((a,b)=>a+b,0)/state.times.length;
-  const speedAdj=Math.max(-3,Math.min(3,(25-avgTime)/8));
-  iq=Math.round(iq+speedAdj);
-  iq=Math.max(55,Math.min(160,iq));
-
-  // Percentile from z-score
-  const finalZ=(iq-100)/15;
-  const percentile=Math.min(99.9,Math.max(0.1,(0.5*(1+erf(finalZ/Math.sqrt(2))))*100));
-
-  // Classification
-  let classification,classColor;
-  if(iq<70){classification='Extremely Low';classColor='#ef4444';}
-  else if(iq<80){classification='Borderline';classColor='#f97316';}
-  else if(iq<90){classification='Low Average';classColor='#eab308';}
-  else if(iq<110){classification='Average';classColor='#22c55e';}
-  else if(iq<120){classification='High Average';classColor='#3b82f6';}
-  else if(iq<130){classification='Superior';classColor='#6366f1';}
-  else if(iq<145){classification='Very Superior';classColor='#8b5cf6';}
-  else{classification='Exceptional';classColor='#d946ef';}
-
-  return{iq,percentile:percentile.toFixed(1),classification,classColor,correctCount,
-    rawPct:(rawPct*100).toFixed(1),catScores,avgTime:avgTime.toFixed(1),
-    totalTime:state.totalTime,speedAdj:speedAdj.toFixed(1),weightedScore,maxWeighted};
+  const avgZ=state.gesamtZeit/FRAGEN.length;
+  const spAdj=Math.max(-2,Math.min(2,(35-avgZ)/12));
+  iq=Math.round(iq+spAdj);iq=Math.max(55,Math.min(145,iq));
+  const fz=(iq-100)/15;
+  const perc=Math.min(99.9,Math.max(0.1,(0.5*(1+erf(fz/Math.sqrt(2))))*100));
+  let label,farbe;
+  if(iq<70){label='Sehr niedrig';farbe='#ef4444';}
+  else if(iq<80){label='Unterdurchschnittlich';farbe='#f97316';}
+  else if(iq<90){label='Leicht unterdurchschnittlich';farbe='#eab308';}
+  else if(iq<110){label='Durchschnittlich';farbe='#22c55e';}
+  else if(iq<120){label='Überdurchschnittlich';farbe='#3b82f6';}
+  else if(iq<130){label='Hochbegabt';farbe='#6366f1';}
+  else if(iq<140){label='Sehr hochbegabt';farbe='#8b5cf6';}
+  else{label='Außergewöhnlich';farbe='#d946ef';}
+  const falsch=[];
+  FRAGEN.forEach((q,i)=>{if(state.answers[i]!==q.ans)falsch.push({i,q,got:state.answers[i]});});
+  return{iq,perc:perc.toFixed(1),label,farbe,richtig,pct:(pct*100).toFixed(1),kat,avgZ:avgZ.toFixed(1),gZ:state.gesamtZeit,spAdj:spAdj.toFixed(1),gew,maxG,falsch};
 }
 
-function erf(x){
-  const t=1/(1+0.3275911*Math.abs(x));
-  const poly=t*(0.254829592+t*(-0.284496736+t*(1.421413741+t*(-1.453152027+t*1.061405429))));
-  const result=1-poly*Math.exp(-x*x);
-  return x>=0?result:-result;
+/* ===================== CATEGORY TIPS ===================== */
+function getCatTip(cat,p){
+  if(p>=80)return null;
+  const t={
+    M:'💡 Tipp: Trainiere Mustererkennung mit Raven-Matrices oder Sudoku-Rätseln.',
+    Z:'💡 Tipp: Übe Zahlenfolgen täglich – viele Apps bieten kurze Trainingseinheiten.',
+    L:'💡 Tipp: Syllogismus-Übungen und Logikrätsel stärken das deduktive Denken.',
+    R:'💡 Tipp: 3D-Puzzle, Origami oder mentale Rotationsübungen verbessern räumliches Denken.',
+    V:'💡 Tipp: Lesen, Kreuzworträtsel und Analogie-Übungen stärken verbale Intelligenz.'
+  };
+  return t[cat];
 }
 
-// ═══════════════════ RESULTS ═══════════════════
-function showResults(){
-  const r=calculateResults();
-  const totalMins=Math.floor(r.totalTime/60);
-  const totalSecs=Math.floor(r.totalTime%60);
+/* ===================== RESULTS ===================== */
+function zeigeErgebnis(){
+  const r=berechneErgebnis();
+  const gm=Math.floor(r.gZ/60),gs=Math.floor(r.gZ%60);
 
-  let catBars='';
-  Object.entries(r.catScores).forEach(([cat,sc])=>{
-    const pct=sc.max>0?Math.round(sc.got/sc.max*100):0;
-    catBars+=`<div class="cat-row">
-      <span class="cat-name">${CAT_NAMES[cat]}</span>
-      <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:${pct}%;background:${CAT_COLORS[cat]}"></div></div>
-      <span class="cat-pct">${pct}%</span>
-    </div>`;
+  // Motivational banner
+  let motiv;
+  if(r.iq>=130)motiv={title:'🌟 Außergewöhnliche Leistung!',text:'Du zeigst eine herausragende analytische Kapazität. Deine Ergebnisse in Logik und Mustererkennung liegen im Spitzenbereich.',bg:'rgba(139,92,246,.12)',border:'rgba(139,92,246,.4)'};
+  else if(r.iq>=120)motiv={title:'🎯 Hochbegabt',text:'Du befindest dich klar im hochbegabten Bereich. Deine Stärken in deduktivem Denken und Mustererkennung sind bemerkenswert.',bg:'rgba(59,130,246,.12)',border:'rgba(59,130,246,.35)'};
+  else if(r.iq>=110)motiv={title:'👍 Überdurchschnittlich',text:'Du übertriffst den Bevölkerungsdurchschnitt deutlich. Mit gezieltem Üben sind weitere Verbesserungen möglich.',bg:'rgba(34,197,94,.12)',border:'rgba(34,197,94,.3)'};
+  else if(r.iq>=90)motiv={title:'📊 Durchschnittlicher Bereich',text:'Du liegst im normalen Bereich – wie die Mehrheit der Bevölkerung. Regelmäßiges Üben führt zu messbaren Verbesserungen.',bg:'rgba(234,179,8,.12)',border:'rgba(234,179,8,.3)'};
+  else motiv={title:'💪 Weiter üben!',text:'IQ ist trainierbar. Regelmäßiges Üben von Logik- und Musteraufgaben führt nachweislich zu Verbesserungen.',bg:'rgba(239,68,68,.1)',border:'rgba(239,68,68,.25)'};
+
+  // Category bars + tips
+  let katB='';
+  Object.entries(r.kat).forEach(([k,sc])=>{
+    const p=sc.m>0?Math.round(sc.g/sc.m*100):0;
+    const tip=getCatTip(k,p);
+    katB+=`<div class="cat-row">
+      <span class="cat-name">${KAT[k].icon} ${KAT[k].name}</span>
+      <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:0%;background:${KAT[k].col}" data-w="${p}"></div></div>
+      <span class="cat-pct">${p}%</span>
+    </div>${tip?`<div class="cat-tip">${tip}</div>`:''}`;
   });
+
+  // IQ reference table
+  const ranges=[
+    {min:145,max:145,lbl:'Außergewöhnlich',pct:'&lt; 0.1%'},
+    {min:130,max:144,lbl:'Sehr hochbegabt',pct:'2%'},
+    {min:120,max:129,lbl:'Hochbegabt',pct:'7%'},
+    {min:110,max:119,lbl:'Überdurchschnittlich',pct:'16%'},
+    {min:90,max:109,lbl:'Durchschnittlich',pct:'50%'},
+    {min:80,max:89,lbl:'Unterdurchschnittlich',pct:'16%'},
+    {min:55,max:79,lbl:'Weit unterdurchschnittlich',pct:'9%'},
+  ];
+  let tblRows=ranges.map(row=>{
+    const cur=r.iq>=row.min&&r.iq<=row.max;
+    return`<tr${cur?' class="current-row"':''}><td>${row.min===145?'145+':row.min+'–'+row.max}</td><td>${row.lbl}${cur?' ←':''}</td><td>${row.pct}</td></tr>`;
+  }).join('');
+
+  // Wrong answers
+  const lbl=['A','B','C','D','E','F'];
+  const falschHTML=r.falsch.length===0?
+    `<div style="text-align:center;padding:20px;color:#4ade80;font-size:1rem">✅ Hervorragend! Alle Fragen richtig beantwortet.</div>`:
+    r.falsch.map(({i,q,got})=>{
+      const isVis=q.type!=='text'&&q.type!=='analogy';
+      const gText=got===-1?'(Keine Antwort)':(isVis?`Option ${lbl[got]||'?'}`:q.opts[got]||'–');
+      const cText=isVis?`Option ${lbl[q.ans]}`:(q.opts[q.ans]||'–');
+      const kc=KAT[q.cat]?.col||'#94a3b8';
+      const analogyHint=q.type==='analogy'?`<div class="wrong-analogy">${q.analogy[0]} : ${q.analogy[1]} = ${q.analogy[2]} : ?</div>`:'';
+      return`<div class="wrong-item">
+        <div class="wrong-header">
+          <span class="wrong-num">❌ Frage ${i+1}</span>
+          <span class="wrong-cat-badge" style="background:${kc}22;color:${kc};border:1px solid ${kc}44">${KAT[q.cat]?.icon} ${KAT[q.cat]?.name}</span>
+          <span class="wrong-diff" style="color:#f59e0b">${'★'.repeat(q.diff)}${'☆'.repeat(5-q.diff)}</span>
+        </div>
+        ${analogyHint}
+        <div class="wrong-title">${q.title}</div>
+        <div class="wrong-ans-grid">
+          <div class="ans-box usr"><div class="al">✗ Deine Antwort</div><div>${gText}</div></div>
+          <div class="ans-box cor"><div class="al">✓ Richtige Antwort</div><div>${cText}</div></div>
+        </div>
+        ${q.expl?`<div class="expl">💡 ${q.expl}</div>`:''}
+      </div>`;
+    }).join('');
 
   app.innerHTML=`<div class="results">
-    <div class="iq-display">
-      <div class="iq-score" id="iqNum">0</div>
-      <div class="iq-label">Estimated IQ Score</div>
-    </div>
-    <div class="classification" style="color:${r.classColor}">${r.classification}</div>
-    <div class="percentile">Percentile: ${r.percentile}% — You scored higher than ${r.percentile}% of the population</div>
+  <!-- PRINT CERTIFICATE -->
+  <div class="print-cert">
+    <h1>🧠 IQ-Intelligenztest – Zertifikat</h1>
+    <div class="pc-meta">Ausgestellt für: <b>${state.userName}</b> · Datum: ${new Date().toLocaleDateString('de-DE')}</div>
+    <div class="pc-iq">${r.iq}</div>
+    <div class="pc-meta"><b>${r.label}</b><br>Perzentil: ${r.perc}% · Richtige Antworten: ${r.richtig}/${FRAGEN.length}<br>Gesamtzeit: ${gm}:${String(gs).padStart(2,'0')} Min</div>
+    <div class="pc-dis">Informelles Schätzverfahren, kein klinisch normierter IQ-Test (WAIS-IV, Stanford-Binet). Abweichung ±8–12 Punkte möglich.</div>
+  </div>
 
-    <div class="bell-curve-container">
-      <h3>Normal Distribution — Your Position</h3>
-      <div id="bellCurve"></div>
-    </div>
+  <!-- IQ SCORE -->
+  <div class="iq-display">
+    <div class="iq-score" id="iqNum">0</div>
+    <div class="iq-label">Geschätzter IQ-Wert · ${state.userName}</div>
+  </div>
+  <div class="classification" style="color:${r.farbe}">${r.label}</div>
+  <div class="percentile">Perzentil ${r.perc} % — Besser als ca. ${r.perc}% der Allgemeinbevölkerung</div>
 
-    <div class="cat-breakdown">
-      <h3>Category Breakdown</h3>
-      ${catBars}
-    </div>
+  <!-- MOTIVATIONAL BANNER -->
+  <div class="motiv-banner" style="background:${motiv.bg};border-color:${motiv.border}">
+    <div class="mb-title" style="color:${r.farbe}">${motiv.title}</div>
+    <div class="mb-text" style="color:#cbd5e1">${motiv.text}</div>
+  </div>
 
-    <div class="details-card">
-      <h3>Test Statistics</h3>
-      <div class="detail-grid">
-        <div class="detail-item"><div class="detail-val">${r.correctCount}/${QUESTIONS.length}</div><div class="detail-lbl">Correct Answers</div></div>
-        <div class="detail-item"><div class="detail-val">${r.rawPct}%</div><div class="detail-lbl">Weighted Score</div></div>
-        <div class="detail-item"><div class="detail-val">${totalMins}:${String(totalSecs).padStart(2,'0')}</div><div class="detail-lbl">Total Time</div></div>
-        <div class="detail-item"><div class="detail-val">${r.avgTime}s</div><div class="detail-lbl">Avg. Time / Question</div></div>
-        <div class="detail-item"><div class="detail-val">${r.speedAdj>0?'+':''}${r.speedAdj}</div><div class="detail-lbl">Speed Adjustment</div></div>
-        <div class="detail-item"><div class="detail-val">${r.weightedScore}/${r.maxWeighted}</div><div class="detail-lbl">Weighted Points</div></div>
-      </div>
-    </div>
+  <!-- SHARE ROW -->
+  <div class="share-row">
+    <button class="share-btn" id="shareBtn" onclick="shareErgebnis(${r.iq},'${r.perc}','${r.label}')">📋 Ergebnis kopieren</button>
+    <button class="share-btn" onclick="window.print()">🖨️ Zertifikat drucken</button>
+    <button class="share-btn" onclick="starteTest(true)">🔄 Test wiederholen</button>
+  </div>
 
-    <div class="disclaimer">
-      <b>Disclaimer:</b> This is an estimation tool, not a clinically administered IQ test. Official IQ testing (WAIS-IV, Stanford-Binet 5, Raven's APM) requires a licensed psychologist and controlled conditions. Results may vary ±5-10 points from a clinical assessment. This test uses Item Response Theory weighted scoring with probit normalization calibrated to the Wechsler scale (μ=100, σ=15).
-    </div>
+  <!-- BELL CURVE -->
+  <div class="res-card"><h3>Normalverteilung – Deine Position</h3><div id="bellCurve"></div></div>
 
-    <div class="btn-row">
-      <button class="btn btn-primary" onclick="startTest()">Retake Test</button>
-      <button class="btn btn-secondary" onclick="showLanding()">Back to Home</button>
-    </div>
-  </div>`;
+  <!-- CATEGORIES -->
+  <div class="res-card"><h3>Kategorie-Auswertung</h3>${katB}</div>
 
-  // Animate IQ counter
-  animateCounter(r.iq);
-  // Draw bell curve
-  setTimeout(()=>drawBellCurve(r.iq),300);
+  <!-- STATS -->
+  <div class="res-card"><h3>Teststatistik</h3>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="detail-val">${r.richtig}/${FRAGEN.length}</div><div class="detail-lbl">Richtige Antworten</div></div>
+      <div class="detail-item"><div class="detail-val">${r.pct}%</div><div class="detail-lbl">Gew. Punktzahl</div></div>
+      <div class="detail-item"><div class="detail-val">${gm}:${String(gs).padStart(2,'0')}</div><div class="detail-lbl">Gesamtzeit</div></div>
+      <div class="detail-item"><div class="detail-val">${r.avgZ}s</div><div class="detail-lbl">Ø Sek. pro Frage</div></div>
+      <div class="detail-item"><div class="detail-val">${r.spAdj>0?'+':''}${r.spAdj}</div><div class="detail-lbl">Tempo-Bonus</div></div>
+      <div class="detail-item"><div class="detail-val">${r.gew}/${r.maxG}</div><div class="detail-lbl">Gew. Punkte</div></div>
+    </div>
+  </div>
+
+  <!-- IQ TABLE -->
+  <div class="res-card"><h3>IQ-Klassifikationsübersicht (Wechsler-Skala)</h3>
+    <table class="iq-table"><thead><tr><th>IQ-Bereich</th><th>Klassifikation</th><th>Bevölkerungsanteil</th></tr></thead>
+    <tbody>${tblRows}</tbody></table>
+  </div>
+
+  <!-- WRONG ANSWERS -->
+  <div class="res-card" style="text-align:left">
+    <h3 style="text-align:center">❌ Falsche Antworten ${r.falsch.length>0?`(${r.falsch.length} von ${FRAGEN.length})`:''}</h3>
+    ${falschHTML}
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer"><b>Wissenschaftlicher Hinweis:</b> Dies ist eine informelle IQ-Schätzung, kein klinisch normierter Test. Der Test prüft ausschließlich kognitiv-universelle Fähigkeiten (Mustererkennung, Logik, Numerik, Raumvorstellung, Sprachkompetenz) – kein Spezialwissen erforderlich. Klinisch anerkannte Tests (WAIS-IV, Stanford-Binet 5, Raven APM) werden von Fachpsychologen unter standardisierten Bedingungen durchgeführt. Diese Schätzung kann um ±8–12 IQ-Punkte von einer klinischen Messung abweichen.</div>
+
+  <div class="btn-row" style="margin-top:18px">
+    <button class="btn btn-primary" onclick="starteTest(true)">🔄 Test wiederholen</button>
+    <button class="btn btn-secondary" onclick="zeigeLanding()">← Startseite</button>
+  </div>
+</div>`;
+
+  animiereZaehler(r.iq);
+  setTimeout(()=>{
+    drawBell(r.iq);
+    document.querySelectorAll('.cat-bar-fill').forEach(el=>{el.style.width=el.dataset.w+'%';});
+  },400);
+  if(r.iq>=120)setTimeout(launchConfetti,800);
 }
 
-function animateCounter(target){
-  const el=document.getElementById('iqNum');
-  const duration=1500;
-  const start=Date.now();
-  const from=60;
-  function tick(){
-    const t=Math.min(1,(Date.now()-start)/duration);
-    const ease=1-Math.pow(1-t,3);
-    el.textContent=Math.round(from+(target-from)*ease);
-    if(t<1)requestAnimationFrame(tick);
+/* ===================== SHARE ===================== */
+window.shareErgebnis=function(iq,perc,label){
+  const txt=`🧠 Mein IQ-Testergebnis: ${iq} (${label})\n📊 Perzentil: ${perc}%\n📝 Getestet mit dem deutschen Online-IQ-Test`;
+  if(navigator.share){navigator.share({title:'Mein IQ-Ergebnis',text:txt}).catch(()=>{});}
+  else{
+    navigator.clipboard.writeText(txt).then(()=>{
+      showToast('✓ Ergebnis in Zwischenablage kopiert!');
+      const btn=document.getElementById('shareBtn');
+      if(btn){btn.className='share-btn copied';setTimeout(()=>{btn.className='share-btn';},3000);}
+    }).catch(()=>showToast('Kopieren nicht unterstützt'));
   }
-  tick();
+};
+
+/* ===================== BELL CURVE ===================== */
+function animiereZaehler(ziel){
+  const el=document.getElementById('iqNum');const dur=1600,von=55,start=Date.now();
+  function tick(){const t=Math.min(1,(Date.now()-start)/dur);const e=1-Math.pow(1-t,3);el.textContent=Math.round(von+(ziel-von)*e);if(t<1)requestAnimationFrame(tick);}tick();
 }
 
-function drawBellCurve(iq){
-  const container=document.getElementById('bellCurve');
-  if(!container)return;
-  const W=680,H=220,pad={t:20,r:30,b:50,l:30};
+function drawBell(iq){
+  const cont=document.getElementById('bellCurve');if(!cont)return;
+  const W=640,H=200,pad={t:18,r:25,b:52,l:25};
   const gW=W-pad.l-pad.r,gH=H-pad.t-pad.b;
-
   const xMin=40,xMax=160;
-  function xScale(v){return pad.l+(v-xMin)/(xMax-xMin)*gW;}
-  function yScale(v){return pad.t+gH-v/(normalPDF(100,100,15))*gH*0.9;}
-
-  // Build curve path
-  let path='M';
-  let areaPath='M'+xScale(xMin)+','+yScale(0)+' L';
+  const xS=v=>pad.l+(v-xMin)/(xMax-xMin)*gW;
+  const yS=v=>pad.t+gH-v/normalPDF(100)*gH*0.88;
+  let path='',shade=`M${xS(xMin)},${yS(0)} L`;
+  const iqC=Math.max(xMin,Math.min(xMax,iq));
   for(let x=xMin;x<=xMax;x+=0.5){
-    const y=normalPDF(x,100,15);
-    const px=xScale(x),py=yScale(y);
-    path+=`${px},${py} `;
-    areaPath+=`${px},${py} `;
+    const y=normalPDF(x),px=xS(x),py=yS(y);
+    path+=(x===xMin?'M':'L')+`${px},${py} `;
+    if(x<=iqC)shade+=`${px},${py} `;
   }
-  areaPath+=`L${xScale(xMax)},${yScale(0)} Z`;
-
-  // Shaded area up to user's IQ
-  let shadePath='M'+xScale(xMin)+','+yScale(0)+' L';
-  const iqClamped=Math.max(xMin,Math.min(xMax,iq));
-  for(let x=xMin;x<=iqClamped;x+=0.5){
-    const y=normalPDF(x,100,15);
-    shadePath+=`${xScale(x)},${yScale(y)} `;
-  }
-  shadePath+=`L${xScale(iqClamped)},${yScale(0)} Z`;
-
-  // User marker
-  const ux=xScale(iqClamped);
-  const uy=yScale(normalPDF(iqClamped,100,15));
-
-  // SD lines and labels
-  const sdMarks=[55,70,85,100,115,130,145];
-  const sdLabels=['-3σ','-2σ','-1σ','μ','+1σ','+2σ','+3σ'];
-  let gridLines='',gridLabels='';
-  sdMarks.forEach((v,i)=>{
-    const x=xScale(v);
-    gridLines+=`<line x1="${x}" y1="${pad.t}" x2="${x}" y2="${H-pad.b}" stroke="rgba(255,255,255,.08)" stroke-dasharray="4,4"/>`;
-    gridLabels+=`<text x="${x}" y="${H-pad.b+16}" text-anchor="middle" fill="#64748b" font-size="11">${v}</text>`;
-    gridLabels+=`<text x="${x}" y="${H-pad.b+30}" text-anchor="middle" fill="#475569" font-size="9">${sdLabels[i]}</text>`;
-  });
-
-  const svg=`<svg width="100%" viewBox="0 0 ${W} ${H}" style="display:block">
-    ${gridLines}
-    <path d="${areaPath}" fill="rgba(129,140,248,.08)" stroke="none"/>
-    <path d="${shadePath}" fill="rgba(129,140,248,.2)" stroke="none"/>
-    <path d="${path}" fill="none" stroke="#818cf8" stroke-width="2.5" stroke-linejoin="round"/>
-    <line x1="${ux}" y1="${uy}" x2="${ux}" y2="${H-pad.b}" stroke="#c084fc" stroke-width="2" stroke-dasharray="6,3"/>
-    <circle cx="${ux}" cy="${uy}" r="6" fill="#c084fc" stroke="#fff" stroke-width="2"/>
-    <rect x="${ux-24}" y="${uy-28}" width="48" height="22" rx="6" fill="#7c3aed"/>
-    <text x="${ux}" y="${uy-14}" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">${iq}</text>
-    ${gridLabels}
-  </svg>`;
-  container.innerHTML=svg;
+  shade+=`L${xS(iqC)},${yS(0)} Z`;
+  let areaPath=`M${xS(xMin)},${yS(0)} L`;
+  for(let x=xMin;x<=xMax;x+=0.5)areaPath+=`${xS(x)},${yS(normalPDF(x))} `;
+  areaPath+=`L${xS(xMax)},${yS(0)} Z`;
+  const ux=xS(iqC),uy=yS(normalPDF(iqC));
+  const marks=[55,70,85,100,115,130,145];const lbls=['-3σ','-2σ','-1σ','μ','+1σ','+2σ','+3σ'];
+  let gl='',gt='';
+  marks.forEach((v,i)=>{const x=xS(v);gl+=`<line x1="${x}" y1="${pad.t}" x2="${x}" y2="${H-pad.b}" stroke="rgba(255,255,255,.07)" stroke-dasharray="4,3"/>`;gt+=`<text x="${x}" y="${H-pad.b+15}" text-anchor="middle" fill="#64748b" font-size="10">${v}</text><text x="${x}" y="${H-pad.b+28}" text-anchor="middle" fill="#475569" font-size="9">${lbls[i]}</text>`;});
+  cont.innerHTML=`<svg width="100%" viewBox="0 0 ${W} ${H}" style="display:block">
+${gl}<path d="${areaPath}" fill="rgba(129,140,248,.07)"/><path d="${shade}" fill="rgba(129,140,248,.25)"/>
+<path d="${path}" fill="none" stroke="#818cf8" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="${ux}" y1="${uy}" x2="${ux}" y2="${H-pad.b}" stroke="#c084fc" stroke-width="2" stroke-dasharray="5,3"/>
+<circle cx="${ux}" cy="${uy}" r="6" fill="#c084fc" stroke="#fff" stroke-width="2.5"/>
+<rect x="${ux-28}" y="${uy-30}" width="56" height="24" rx="6" fill="#7c3aed"/>
+<text x="${ux}" y="${uy-14}" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">${iq}</text>
+${gt}</svg>`;
 }
 
-// ═══════════════════ INIT ═══════════════════
-showLanding();
+/* ===================== INIT ===================== */
+zeigeLanding();
 </script>
 </body>
 </html>
