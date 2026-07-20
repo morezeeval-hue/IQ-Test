@@ -378,7 +378,7 @@ const FRAGEN=[
  expl:'If A were a knight, then "We are both knaves" would be true → contradiction (A would then be a knave). Therefore, A = knave. A lies → they are not both knaves → B = knight.'},
 
 {cat:'L',diff:5,type:'text',title:'Einstein Riddle (simplified):',
- q:'5 people, each with a favorite color: Red, Blue, Green, Yellow, Purple.<br>• Dave → Red &nbsp; • Eva → Purple<br>• Alice → not Blue &nbsp; • Carol → not Yellow, not Green<br>• Bob → not Green<br>The remaining colors (Blue, Green, Yellow) are distributed among Alice, Carol, and Bob.<br><br>What is Carol's color?',
+ q:'5 people, each with a favorite color: Red, Blue, Green, Yellow, Purple.<br>• Dave → Red &nbsp; • Eva → Purple<br>• Alice → not Blue &nbsp; • Carol → not Yellow, not Green<br>• Bob → not Green<br>The remaining colors (Blue, Green, Yellow) are distributed among Alice, Carol, and Bob.<br><br>What is Carol\'s color?',
  opts:['Blue','Green','Yellow','Undetermined'],ans:0,
  expl:'Carol ≠ Yellow, Carol ≠ Green → Carol = Blue. Bob ≠ Green → Bob = Yellow. Alice = Green (only one left).'},
 
@@ -948,7 +948,7 @@ function berechneErgebnis(){
 function getCatTip(cat,p){
   if(p>=80)return null;
   const t={
-    M:'💡 Tip: Train Pattern Recognition with Raven's Matrices or Sudoku puzzles.',
+    M:'💡 Tip: Train Pattern Recognition with Raven\'s Matrices or Sudoku puzzles.',
     Z:'💡 Tip: Practice number series daily – many apps offer short training sessions.',
     L:'💡 Tip: Syllogism exercises and logic puzzles strengthen deductive reasoning.',
     R:'💡 Tip: 3D puzzles, origami, or mental rotation exercises improve spatial reasoning.',
