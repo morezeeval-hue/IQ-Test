@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IQ-Intelligenztest (Deutsch) – Premium 2025</title>
+<title>IQ Intelligence Test – Premium 2025</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--pri:#4f46e5;--pri2:#7c3aed;--bg:#0f172a;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--green:#22c55e;--red:#ef4444}
@@ -220,22 +220,22 @@ function sh(t,c,f,sz){return{t:t||'c',c:c||C.B,f:f!==false,sz:sz||34};}
 
 /* ===================== CATEGORIES ===================== */
 const KAT={
-  M:{name:'Mustererkennung',col:'#3b82f6',icon:'🔷'},
-  Z:{name:'Numerisches Denken',col:'#22c55e',icon:'🔢'},
-  L:{name:'Logisches Denken',col:'#f97316',icon:'🧩'},
-  R:{name:'Räumliches Denken',col:'#ec4899',icon:'📐'},
-  V:{name:'Verbale Analogien',col:'#8b5cf6',icon:'💬'}
+  M:{name:'Pattern Recognition',col:'#3b82f6',icon:'🔷'},
+  Z:{name:'Numerical Reasoning',col:'#22c55e',icon:'🔢'},
+  L:{name:'Logical Reasoning',col:'#f97316',icon:'🧩'},
+  R:{name:'Spatial Reasoning',col:'#ec4899',icon:'📐'},
+  V:{name:'Verbal Analogies',col:'#8b5cf6',icon:'💬'}
 };
 
 /* ===================== QUESTIONS (48) ===================== */
 const FRAGEN=[
-/* ─── MUSTERERKENNUNG (8) ─── */
-{cat:'M',diff:1,type:'seq',title:'Welche Form kommt als Nächstes?',
+/* ─── PATTERN RECOGNITION (8) ─── */
+{cat:'M',diff:1,type:'seq',title:'Which shape comes next?',
  seq:[[sh('c')],[sh('s')],[sh('t')],[sh('c')],[sh('s')]],
  opts:[[sh('d')],[sh('t')],[sh('c')],[sh('st')]],ans:1,
- expl:'Das Muster ●→■→▲ wiederholt sich zyklisch. Nach ● und ■ folgt zwingend ▲.'},
+ expl:'The pattern ●→■→▲ repeats cyclically. After ● and ■, ▲ must follow.'},
 
-{cat:'M',diff:1,type:'seq',title:'Die Anzahl der Punkte wächst um 1. Welches Element folgt?',
+{cat:'M',diff:1,type:'seq',title:'The number of dots grows by 1. Which element follows?',
  seq:[[sh('c',C.B,true,18)],
       [sh('c',C.B,true,18),sh('c',C.B,true,18)],
       [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
@@ -244,24 +244,24 @@ const FRAGEN=[
        [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
        [sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18),sh('c',C.B,true,18)],
        [sh('c',C.B,true,18),sh('c',C.B,true,18)]],ans:0,
- expl:'Arithmetische Folge +1 Punkt: 1→2→3→4→5.'},
+ expl:'Arithmetic sequence +1 dot: 1→2→3→4→5.'},
 
-{cat:'M',diff:2,type:'seq',title:'Form und Farbe folgen zwei verschiedenen Mustern gleichzeitig. Was kommt als Nächstes?',
+{cat:'M',diff:2,type:'seq',title:'Shape and color follow two different patterns simultaneously. What comes next?',
  seq:[[sh('c',C.R)],[sh('c',C.B)],[sh('s',C.R)],[sh('s',C.B)],[sh('t',C.R)]],
  opts:[[sh('t',C.R)],[sh('t',C.B)],[sh('d',C.B)],[sh('c',C.B)]],ans:1,
- expl:'Form wechselt alle 2 Schritte: ●→●→■→■→▲→▲. Farbe alterniert: Rot↔Blau. Nach ▲-Rot folgt ▲-Blau.'},
+ expl:'Shape changes every 2 steps: ●→●→■→■→▲→▲. Color alternates: Red↔Blue. After ▲-Red follows ▲-Blue.'},
 
-{cat:'M',diff:2,type:'text',title:'Welche Zahl passt <b>nicht</b> in die Gruppe?',
+{cat:'M',diff:2,type:'text',title:'Which number does <b>not</b> fit in the group?',
  q:'<div class="seq-display">4 &nbsp; 9 &nbsp; 16 &nbsp; 25 &nbsp; 35 &nbsp; 49</div>',
  opts:['4','25','35','49'],ans:2,
- expl:'Alle anderen sind Quadratzahlen: 2²=4, 3²=9, 4²=16, 5²=25, 7²=49. Die Zahl 35 ist keine Quadratzahl (6²=36, 5²=25).'},
+ expl:'All others are square numbers: 2²=4, 3²=9, 4²=16, 5²=25, 7²=49. The number 35 is not a square number (6²=36, 5²=25).'},
 
-{cat:'M',diff:3,type:'seq',title:'Beobachte das Größen- und Formmuster. Welches Element fehlt am Ende?',
+{cat:'M',diff:3,type:'seq',title:'Observe the size and shape pattern. Which element is missing at the end?',
  seq:[[sh('c',C.B,true,22)],[sh('s',C.B,true,34)],[sh('t',C.B,true,46)],[sh('c',C.B,true,34)],[sh('s',C.B,true,22)]],
  opts:[[sh('t',C.B,true,22)],[sh('t',C.B,true,46)],[sh('s',C.B,true,34)],[sh('c',C.B,true,46)]],ans:0,
- expl:'Formen: ●→■→▲ (zyklisch). Größen: klein→mittel→groß→mittel→klein→klein (Spiegelung). → ▲ klein.'},
+ expl:'Shapes: ●→■→▲ (cyclical). Sizes: small→medium→large→medium→small→small (reflection). → small ▲.'},
 
-{cat:'M',diff:3,type:'text',title:'Erkenne das Muster in der Matrix. Welche Zahl fehlt?',
+{cat:'M',diff:3,type:'text',title:'Identify the pattern in the matrix. Which number is missing?',
  q:`<div style="display:flex;justify-content:center"><div style="display:inline-grid;grid-template-columns:repeat(3,58px);gap:7px;margin:8px 0;text-align:center">
 <div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">2</div>
 <div style="padding:12px;background:#f1f5f9;border-radius:8px;font-weight:700;font-size:1.05rem">4</div>
@@ -274,225 +274,225 @@ const FRAGEN=[
 <div style="padding:12px;background:#dbeafe;border:2px dashed #3b82f6;border-radius:8px;font-weight:700;font-size:1.1rem;color:#3b82f6">?</div>
 </div></div>`,
  opts:['32','48','64','81'],ans:2,
- expl:'Muster pro Zeile: a, a², a³. Zeile 1: 2,4,8 (=2¹,2²,2³). Zeile 2: 3,9,27. Zeile 3: 4,16,64 (=4³).'},
+ expl:'Pattern per row: a, a², a³. Row 1: 2,4,8 (=2¹,2²,2³). Row 2: 3,9,27. Row 3: 4,16,64 (=4³).'},
 
-{cat:'M',diff:4,type:'matrix',title:'Jede Zeile und Spalte enthält jede Form und jede Farbe genau einmal. Was fehlt?',
+{cat:'M',diff:4,type:'matrix',title:'Each row and column contains each shape and each color exactly once. What is missing?',
  grid:[[[sh('c',C.R)],[sh('s',C.B)],[sh('t',C.G)]],
        [[sh('s',C.G)],[sh('t',C.R)],[sh('c',C.B)]],
        [[sh('t',C.B)],[sh('c',C.G)],null]],
  opts:[[sh('s',C.R)],[sh('c',C.R)],[sh('t',C.R)],[sh('s',C.G)],[sh('d',C.R)],[sh('c',C.G)]],ans:0,
- expl:'Zeile 3 hat ▲ und ●, fehlt ■. Spalte 3 hat ▲, ●, fehlt ■. Farben in Zeile 3: Blau, Grün – fehlt Rot. → ■ in Rot.'},
+ expl:'Row 3 has ▲ and ●, missing ■. Column 3 has ▲, ●, missing ■. Colors in Row 3: Blue, Green – missing Red. → Red ■.'},
 
-{cat:'M',diff:5,type:'matrix',title:'Beachte Form, Farbe, Größe <em>und</em> Füllung zugleich. Was ist das fehlende Element?',
+{cat:'M',diff:5,type:'matrix',title:'Observe shape, color, size, <em>and</em> filling simultaneously. What is the missing element?',
  grid:[[[sh('c',C.R,true,22)],[sh('s',C.B,false,22)],[sh('t',C.G,true,22)]],
        [[sh('c',C.R,false,34)],[sh('s',C.B,true,34)],[sh('t',C.G,false,34)]],
        [[sh('c',C.R,true,46)],[sh('s',C.B,false,46)],null]],
  opts:[[sh('t',C.G,false,46)],[sh('t',C.R,true,46)],[sh('t',C.G,true,46)],[sh('s',C.G,true,46)],[sh('t',C.B,true,46)],[sh('c',C.G,true,46)]],ans:2,
- expl:'Spalte 3: immer ▲ Grün. Füllung Zeile 3: ausgefüllt (Muster voll→leer→voll). Größe Zeile 3: 46px (klein→mittel→groß). → ▲ Grün, ausgefüllt, groß.'},
+ expl:'Column 3: always Green ▲. Filling Row 3: filled (pattern full→empty→full). Size Row 3: 46px (small→medium→large). → Green ▲, filled, large.'},
 
-/* ─── NUMERISCHES DENKEN (10) ─── */
-{cat:'Z',diff:1,type:'text',title:'Erkenne das Muster und wähle die nächste Zahl:',
+/* ─── NUMERICAL REASONING (10) ─── */
+{cat:'Z',diff:1,type:'text',title:'Identify the pattern and choose the next number:',
  q:'<div class="seq-display">2 &nbsp;4 &nbsp;6 &nbsp;8 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['9','10','12','14'],ans:1,
- expl:'Arithmetische Folge mit Differenz d = +2. Nach 8 folgt 8+2 = 10.'},
+ expl:'Arithmetic sequence with difference d = +2. After 8 follows 8+2 = 10.'},
 
-{cat:'Z',diff:2,type:'text',title:'Geometrische Folge – was kommt als Nächstes?',
+{cat:'Z',diff:2,type:'text',title:'Geometric sequence – what comes next?',
  q:'<div class="seq-display">3 &nbsp;6 &nbsp;12 &nbsp;24 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['36','48','30','96'],ans:1,
- expl:'Geometrische Folge mit Quotient q = 2 (jede Zahl wird verdoppelt). 24 × 2 = 48.'},
+ expl:'Geometric sequence with factor q = 2 (each number is doubled). 24 × 2 = 48.'},
 
-{cat:'Z',diff:2,type:'text',title:'Fibonacci-Folge – jede Zahl ist die Summe der zwei vorherigen:',
+{cat:'Z',diff:2,type:'text',title:'Fibonacci sequence – each number is the sum of the two preceding ones:',
  q:'<div class="seq-display">1 &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;5 &nbsp;8 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['10','11','13','15'],ans:2,
- expl:'Fibonacci: jedes Glied = Summe der zwei vorherigen. 5 + 8 = 13.'},
+ expl:'Fibonacci: each term = sum of the two preceding ones. 5 + 8 = 13.'},
 
-{cat:'Z',diff:3,type:'text',title:'Primzahlen-Folge – was folgt?',
+{cat:'Z',diff:3,type:'text',title:'Prime number sequence – what follows?',
  q:'<div class="seq-display">2 &nbsp;3 &nbsp;5 &nbsp;7 &nbsp;11 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['12','13','14','15'],ans:1,
- expl:'Primzahlen sind nur durch 1 und sich selbst teilbar. Nach 11 folgt 13 (12=4×3, 14=2×7, 15=3×5 → zusammengesetzt).'},
+ expl:'Prime numbers are only divisible by 1 and themselves. After 11 follows 13 (12=4×3, 14=2×7, 15=3×5 → composite).'},
 
-{cat:'Z',diff:2,type:'text',title:'Quadratzahlen-Folge – was kommt danach?',
+{cat:'Z',diff:2,type:'text',title:'Square numbers sequence – what comes next?',
  q:'<div class="seq-display">1 &nbsp;4 &nbsp;9 &nbsp;16 &nbsp;25 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['30','36','42','49'],ans:1,
  expl:'n²: 1²=1, 2²=4, 3²=9, 4²=16, 5²=25, 6²=36.'},
 
-{cat:'Z',diff:3,type:'text',title:'Kubikzahlen-Folge – was folgt?',
+{cat:'Z',diff:3,type:'text',title:'Cube numbers sequence – what follows?',
  q:'<div class="seq-display">1 &nbsp;8 &nbsp;27 &nbsp;64 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['81','100','125','216'],ans:2,
  expl:'n³: 1³=1, 2³=8, 3³=27, 4³=64, 5³=125.'},
 
-{cat:'Z',diff:3,type:'text',title:'Die Differenzen wachsen um 2. Was kommt als Nächstes?',
+{cat:'Z',diff:3,type:'text',title:'The differences grow by 2. What comes next?',
  q:'<div class="seq-display">2 &nbsp;5 &nbsp;10 &nbsp;17 &nbsp;26 &nbsp;37 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['44','50','54','60'],ans:1,
- expl:'Differenzen: +3, +5, +7, +9, +11 → nächste Differenz: +13. 37+13=50. Alternativ: n²+1 (7²+1=50).'},
+ expl:'Differences: +3, +5, +7, +9, +11 → next difference: +13. 37+13=50. Alternatively: n²+1 (7²+1=50).'},
 
-{cat:'Z',diff:3,type:'text',title:'Dreieckszahlen (jede Zeile eines Dreiecks addiert) – was folgt?',
+{cat:'Z',diff:3,type:'text',title:'Triangular numbers (each row of a triangle added) – what follows?',
  q:'<div class="seq-display">1 &nbsp;3 &nbsp;6 &nbsp;10 &nbsp;15 &nbsp;21 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['24','27','28','30'],ans:2,
- expl:'Dreieckszahlen: n(n+1)/2. Differenzen: +2,+3,+4,+5,+6,+7. 21+7=28.'},
+ expl:'Triangular numbers: n(n+1)/2. Differences: +2, +3, +4, +5, +6, +7. 21+7=28.'},
 
-{cat:'Z',diff:3,type:'text',title:'Welche Zahl passt <b>nicht</b> in die Gruppe?',
+{cat:'Z',diff:3,type:'text',title:'Which number does <b>not</b> fit in the group?',
  q:'<div class="seq-display">2 &nbsp;3 &nbsp;5 &nbsp;7 &nbsp;9 &nbsp;11</div>',
  opts:['5','7','9','11'],ans:2,
- expl:'Alle anderen (2, 3, 5, 7, 11) sind Primzahlen. 9 = 3×3 ist eine zusammengesetzte Zahl und keine Primzahl.'},
+ expl:'All others (2, 3, 5, 7, 11) are prime numbers. 9 = 3×3 is a composite number and not a prime number.'},
 
-{cat:'Z',diff:4,type:'text',title:'Die Differenzen nehmen ab. Was folgt?',
+{cat:'Z',diff:4,type:'text',title:'The differences decrease. What follows?',
  q:'<div class="seq-display">100 &nbsp;90 &nbsp;81 &nbsp;73 &nbsp;66 &nbsp;60 &nbsp;<span style="color:#3b82f6">__</span></div>',
  opts:['53','55','57','60'],ans:1,
- expl:'Differenzen: −10, −9, −8, −7, −6 → nächste: −5. 60 − 5 = 55.'},
+ expl:'Differences: −10, −9, −8, −7, −6 → next: −5. 60 − 5 = 55.'},
 
-/* ─── LOGISCHES DENKEN (10) ─── */
-{cat:'L',diff:1,type:'text',title:'Ist dieser deduktive Schluss logisch gültig?',
- q:'Alle Hunde sind Tiere.<br>Alle Tiere brauchen Wasser.<br><br><b>Schlussfolgerung:</b> Alle Hunde brauchen Wasser.',
- opts:['Gültig – folgt zwingend','Ungültig – folgt nicht','Unbestimmbar','Nur teilweise wahr'],ans:0,
- expl:'Gültiger Syllogismus (Barbara): Hunde ⊆ Tiere, Tiere ⊆ {Wasserbedarf} → Hunde ⊆ {Wasserbedarf}. Die Schlussfolgerung folgt zwingend.'},
+/* ─── LOGICAL REASONING (10) ─── */
+{cat:'L',diff:1,type:'text',title:'Is this deductive conclusion logically valid?',
+ q:'All dogs are animals.<br>All animals need water.<br><br><b>Conclusion:</b> All dogs need water.',
+ opts:['Valid – follows necessarily','Invalid – does not follow','Undetermined','Only partially true'],ans:0,
+ expl:'Valid syllogismus (Barbara): dogs ⊆ animals, animals ⊆ {need water} → dogs ⊆ {need water}. The conclusion follows necessarily.'},
 
-{cat:'L',diff:2,type:'text',title:'Erkenne den logischen Fehlschluss:',
- q:'<em>„Wenn es regnet, wird die Straße nass."</em><br><br>Beobachtung: Die Straße ist nass.<br><br>Kann man zwingend schlussfolgern, dass es geregnet hat?',
- opts:['Ja, es muss geregnet haben','Nein – andere Ursachen sind möglich','Nur wenn keine Sprinkler vorhanden','Ja, das gilt bikonditional'],ans:1,
- expl:'Fehlschluss „Bestätigung des Konsequens": Aus P→Q und Q folgt logisch NICHT P. Die nasse Straße kann durch Sprinkler, Putzfahrzeuge usw. entstanden sein.'},
+{cat:'L',diff:2,type:'text',title:'Identify the logical fallacy:',
+ q:'<em>"When it rains, the street gets wet."</em><br><br>Observation: The street is wet.<br><br>Can one necessarily conclude that it has rained?',
+ opts:['Yes, it must have rained','No – other causes are possible','Only if there are no sprinklers','Yes, this is biconditional'],ans:1,
+ expl:'Fallacy of "affirming the consequent": From P→Q and Q, it does NOT logically follow P. The wet street could be caused by sprinklers, cleaning vehicles, etc.'},
 
-{cat:'L',diff:2,type:'text',title:'Ist dieser Syllogismus logisch gültig?',
- q:'Einige Katzen sind schwarz.<br>Einige schwarze Dinge sind Hüte.<br><br><b>Schlussfolgerung:</b> Einige Katzen sind Hüte.',
- opts:['Gültig','Ungültig – Mittelbegriff nicht ausgeschöpft','Nur für schwarze Katzen gültig','Unbestimmbar'],ans:1,
- expl:'Fehler des „undistributed middle": Der Mittelbegriff „schwarz" muss nicht dieselben Objekte abdecken – die Schnittmenge schwarzer Katzen und schwarzer Hüte kann leer sein.'},
+{cat:'L',diff:2,type:'text',title:'Is this syllogism logically valid?',
+ q:'Some cats are black.<br>Some black things are hats.<br><br><b>Conclusion:</b> Some cats are hats.',
+ opts:['Valid','Invalid – undistributed middle term','Only valid for black cats','Undetermined'],ans:1,
+ expl:'Fallacy of the undistributed middle: The middle term "black" does not have to cover the same objects – the intersection of black cats and black hats can be empty.'},
 
-{cat:'L',diff:3,type:'text',title:'Ordne die Personen der Größe nach:',
- q:'A ist größer als B.<br>C ist kleiner als B.<br>D ist größer als A.<br><br>Wer ist der <b>Kleinste</b>?',
+{cat:'L',diff:3,type:'text',title:'Arrange the people by height:',
+ q:'A is taller than B.<br>C is shorter than B.<br>D is taller than A.<br><br>Who is the <b>shortest</b>?',
  opts:['A','B','C','D'],ans:2,
- expl:'Größenreihenfolge ableiten: D > A > B > C. C ist der Kleinste.'},
+ expl:'Deduce height order: D > A > B > C. C is the shortest.'},
 
-{cat:'L',diff:3,type:'text',title:'Ziehe die logische Schlussfolgerung (Modus Tollens):',
- q:'Kein Schüler, der die Prüfung bestanden hat, ist faul.<br>Jan ist faul.<br><br>Was folgt <b>zwingend</b>?',
- opts:['Jan hat die Prüfung bestanden','Jan hat die Prüfung nicht bestanden','Jan ist kein Schüler','Keine Aussage möglich'],ans:1,
- expl:'Kontrapositive: „bestanden → nicht faul". Umkehrung: „faul → nicht bestanden". Jan ist faul → Jan hat nicht bestanden (Modus Tollens).'},
+{cat:'L',diff:3,type:'text',title:'Draw the logical conclusion (Modus Tollens):',
+ q:'No student who passed the exam is lazy.<br>Jan is lazy.<br><br>What follows <b>necessarily</b>?',
+ opts:['Jan passed the exam','Jan did not pass the exam','Jan is not a student','No statement possible'],ans:1,
+ expl:'Contrapositive: "passed → not lazy". Conversion: "lazy → not passed". Jan is lazy → Jan did not pass (Modus Tollens).'},
 
-{cat:'L',diff:4,type:'text',title:'Box-Rätsel: Genau eine der drei Aussagen ist wahr.',
- q:'📦 <b>Box A:</b> „Der Preis ist in dieser Box."<br>📦 <b>Box B:</b> „Der Preis ist nicht in dieser Box."<br>📦 <b>Box C:</b> „Der Preis ist nicht in Box A."<br><br>Genau <b>eine</b> Aussage ist wahr. Wo ist der Preis?',
- opts:['Box A','Box B','Box C','Unbestimmbar'],ans:1,
- expl:'Test: Preis in B → A=falsch, B=falsch (Widerspruch!), C=wahr → genau 1 wahre Aussage ✓. Preis in A → A=wahr, B=wahr → 2 wahre ✗. Preis in C → B=wahr, C=wahr → 2 wahre ✗.'},
+{cat:'L',diff:4,type:'text',title:'Box Riddle: Exactly one of the three statements is true.',
+ q:'📦 <b>Box A:</b> "The prize is in this box."<br>📦 <b>Box B:</b> "The prize is not in this box."<br>📦 <b>Box C:</b> "The prize is not in Box A."<br><br>Exactly <b>one</b> statement is true. Where is the prize?',
+ opts:['Box A','Box B','Box C','Undetermined'],ans:1,
+ expl:'Test: Prize in B → A=false, B=false (contradiction!), C=true → exactly 1 true statement ✓. Prize in A → A=true, B=true → 2 true ✗. Prize in C → B=true, C=true → 2 true ✗.'},
 
-{cat:'L',diff:3,type:'text',title:'Ritter-und-Schurken-Rätsel:',
- q:'Ritter sagen immer die Wahrheit, Schurken lügen immer.<br><br>Person A sagt: <em>„Wir sind beide Schurken."</em><br><br>Was ist Person A?',
- opts:['A ist Ritter, B ist Schurke','A ist Schurke, B ist Ritter','Beide sind Ritter','Beide sind Schurken'],ans:1,
- expl:'Wenn A ein Ritter wäre, wäre „Wir sind beide Schurken" wahr → Widerspruch (A wäre dann Schurke). Also A = Schurke. A lügt → nicht beide Schurken → B = Ritter.'},
+{cat:'L',diff:3,type:'text',title:'Knights and Knaves Riddle:',
+ q:'Knights always tell the truth, knaves always lie.<br><br>Person A says: <em>"We are both knaves."</em><br><br>What is Person A?',
+ opts:['A is a knight, B is a knave','A is a knave, B is a knight','Both are knights','Both are knaves'],ans:1,
+ expl:'If A were a knight, then "We are both knaves" would be true → contradiction (A would then be a knave). Therefore, A = knave. A lies → they are not both knaves → B = knight.'},
 
-{cat:'L',diff:5,type:'text',title:'Einstein-Rätsel (vereinfacht):',
- q:'5 Personen, jede mit einer Lieblingsfarbe: Rot, Blau, Grün, Gelb, Lila.<br>• Dave → Rot &nbsp; • Eva → Lila<br>• Alice → nicht Blau &nbsp; • Carol → nicht Gelb, nicht Grün<br>• Bob → nicht Grün<br>Die Restfarben (Blau, Grün, Gelb) verteilen sich auf Alice, Carol, Bob.<br><br>Welche Farbe hat Carol?',
- opts:['Blau','Grün','Gelb','Unbestimmbar'],ans:0,
- expl:'Carol ≠ Gelb, Carol ≠ Grün → Carol = Blau. Bob ≠ Grün → Bob = Gelb. Alice = Grün (einzige übrig).'},
+{cat:'L',diff:5,type:'text',title:'Einstein Riddle (simplified):',
+ q:'5 people, each with a favorite color: Red, Blue, Green, Yellow, Purple.<br>• Dave → Red &nbsp; • Eva → Purple<br>• Alice → not Blue &nbsp; • Carol → not Yellow, not Green<br>• Bob → not Green<br>The remaining colors (Blue, Green, Yellow) are distributed among Alice, Carol, and Bob.<br><br>What is Carol's color?',
+ opts:['Blue','Green','Yellow','Undetermined'],ans:0,
+ expl:'Carol ≠ Yellow, Carol ≠ Green → Carol = Blue. Bob ≠ Green → Bob = Yellow. Alice = Green (only one left).'},
 
-{cat:'L',diff:3,type:'text',title:'Kontrapositive – welche Aussage folgt zwingend?',
- q:'Gegeben: <em>„Wenn ein Tier ein Vogel ist, hat es Federn."</em><br><br>Welche Aussage folgt logisch <b>zwingend</b>?',
- opts:['Wenn es Federn hat, ist es ein Vogel','Wenn es kein Vogel ist, hat es keine Federn','Wenn es keine Federn hat, ist es kein Vogel','Alle Tiere mit Federn können fliegen'],ans:2,
- expl:'Kontrapositive von P→Q ist ¬Q→¬P (logisch äquivalent). „Keine Federn → kein Vogel". Option A (Umkehrung) und B (Gegenposition) sind nicht logisch äquivalent.'},
+{cat:'L',diff:3,type:'text',title:'Contrapositive – which statement follows necessarily?',
+ q:'Given: <em>"If an animal is a bird, it has feathers."</em><br><br>Which statement follows logically <b>necessarily</b>?',
+ opts:['If it has feathers, it is a bird','If it is not a bird, it has no feathers','If it has no feathers, it is not a bird','All animals with feathers can fly'],ans:2,
+ expl:'The contrapositive of P→Q is ¬Q→¬P (logically equivalent). "No feathers → not a bird". Options A (converse) and B (inverse) are not logically equivalent.'},
 
-{cat:'L',diff:2,type:'text',title:'Deduktiver Syllogismus:',
- q:'Alle Säugetiere sind Wirbeltiere.<br>Wale sind Säugetiere.<br><br>Welche Schlussfolgerung ist <b>zwingend</b> korrekt?',
- opts:['Alle Wirbeltiere sind Wale','Wale sind Wirbeltiere','Wale können nicht fliegen','Wirbeltiere sind immer Säugetiere'],ans:1,
- expl:'Säugetiere ⊆ Wirbeltiere, Wale ⊆ Säugetiere → Wale ⊆ Wirbeltiere. Die anderen Optionen folgen nicht logisch zwingend.'},
+{cat:'L',diff:2,type:'text',title:'Deductive Syllogism:',
+ q:'All mammals are vertebrates.<br>Whales are mammals.<br><br>Which conclusion is <b>necessarily</b> correct?',
+ opts:['All vertebrates are whales','Whales are vertebrates','Whales cannot fly','Vertebrates are always mammals'],ans:1,
+ expl:'Mammals ⊆ vertebrates, whales ⊆ mammals → whales ⊆ vertebrates. The other options do not follow logically necessarily.'},
 
-/* ─── RÄUMLICHES DENKEN (8) ─── */
-{cat:'R',diff:1,type:'text',title:'Orientierungssinn:',
- q:'Du schaust nach <b>Norden</b> und drehst dich <b>90° nach rechts</b>.<br><br>Wo schaust du jetzt hin?',
- opts:['Norden','Osten','Süden','Westen'],ans:1,
- expl:'Norden + 90° im Uhrzeigersinn = Osten. (N→O→S→W im Uhrzeigersinn)'},
+/* ─── SPATIAL REASONING (8) ─── */
+{cat:'R',diff:1,type:'text',title:'Sense of Orientation:',
+ q:'You are facing <b>North</b> and turn <b>90° to the right</b>.<br><br>Which direction are you facing now?',
+ opts:['North','East','South','West'],ans:1,
+ expl:'North + 90° clockwise = East. (N→E→S→W clockwise)'},
 
-{cat:'R',diff:2,type:'text',title:'Mehrfachdrehungen:',
- q:'Du schaust nach <b>Norden</b>. Du drehst dich <b>180°</b>, danach <b>90° nach links</b>.<br><br>Wo schaust du jetzt hin?',
- opts:['Norden','Osten','Süden','Westen'],ans:1,
- expl:'Norden → 180° = Süden. Von Süden, 90° gegen den Uhrzeigersinn (= nach links) = Osten.'},
+{cat:'R',diff:2,type:'text',title:'Multiple Turns:',
+ q:'You are facing <b>North</b>. You turn <b>180°</b>, then <b>90° to the left</b>.<br><br>Which direction are you facing now?',
+ opts:['North','East','South','West'],ans:1,
+ expl:'North → 180° = South. From South, 90° counter-clockwise (= to the left) = East.'},
 
-{cat:'R',diff:2,type:'text',title:'Spiegelung:',
- q:'Du stehst vor einem Spiegel und hebst deine <b>rechte Hand</b>.<br><br>Was macht dein Spiegelbild?',
- opts:['Hebt die rechte Hand','Hebt die linke Hand','Hebt beide Hände','Senkt die rechte Hand'],ans:1,
- expl:'Ein Spiegel spiegelt die Links-Rechts-Achse. Deine rechte Seite erscheint als die linke Seite des Spiegelbildes.'},
+{cat:'R',diff:2,type:'text',title:'Reflection:',
+ q:'You are standing in front of a mirror and raise your <b>right hand</b>.<br><br>What does your mirror image do?',
+ opts:['Raises the right hand','Raises the left hand','Raises both hands','Lowers the right hand'],ans:1,
+ expl:'A mirror reflects the left-right axis. Your right side appears as the left side of the mirror image.'},
 
 {cat:'R',diff:2,type:'text',title:'Navigation:',
- q:'Du fährst <b>3 km nach Norden</b>, dann <b>3 km nach Osten</b>, dann <b>3 km nach Süden</b>.<br><br>Wo befindest du dich relativ zum Startpunkt?',
- opts:['Am Startpunkt','3 km westlich','3 km östlich','3 km nördlich'],ans:2,
- expl:'Nord (+3 km) und Süd (−3 km) heben sich auf. Verbleibend: 3 km östlich vom Start.'},
+ q:'You drive <b>3 km North</b>, then <b>3 km East</b>, then <b>3 km South</b>.<br><br>Where are you relative to the starting point?',
+ opts:['At the starting point','3 km West','3 km East','3 km North'],ans:2,
+ expl:'North (+3 km) and South (-3 km) cancel out. Remaining: 3 km East of start.'},
 
-{cat:'R',diff:3,type:'text',title:'Uhrzeigerwinkel – exakte Berechnung:',
- q:'Eine Uhr zeigt <b>3:15 Uhr</b>.<br>Wie groß ist der Winkel zwischen Stunden- und Minutenzeiger?<br><small style="color:#64748b">Hinweis: Der Stundenzeiger bewegt sich 0,5° pro Minute.</small>',
- opts:['0°','7,5°','15°','22,5°'],ans:1,
- expl:'Minutenzeiger bei 15 Min: 15×6° = 90°. Stundenzeiger um 3:00: 90°, plus 15 Min × 0,5° = 7,5° → 97,5°. Winkel: 97,5° − 90° = 7,5°.'},
+{cat:'R',diff:3,type:'text',title:'Clock Hand Angle – Exact Calculation:',
+ q:'A clock shows <b>3:15</b>.<br>What is the angle between the hour and minute hands?<br><small style="color:#64748b">Note: The hour hand moves 0.5° per minute.</small>',
+ opts:['0°','7.5°','15°','22.5°'],ans:1,
+ expl:'Minute hand at 15 min: 15 × 6° = 90°. Hour hand at 3:00: 90°, plus 15 min × 0.5° = 7.5° → 97.5°. Angle: 97.5° - 90° = 7.5°.'},
 
-{cat:'R',diff:3,type:'text',title:'Papierfaltung:',
- q:'Ein quadratisches Blatt wird <b>einmal in der Mitte gefaltet</b> (rechte Seite über die linke).<br>Ein Loch wird <b>oben rechts</b> in die gefaltete Version gestanzt.<br><br>Wie viele Löcher hat das vollständig entfaltete Blatt?',
- opts:['1 Loch oben rechts','2 Löcher: oben links + oben rechts','2 Löcher: beide links','4 Löcher'],ans:1,
- expl:'Das Loch durchsticht beide Lagen gleichzeitig. Beim Entfalten: ein Loch oben rechts und das gespiegelte Loch oben links.'},
+{cat:'R',diff:3,type:'text',title:'Paper Folding:',
+ q:'A square sheet of paper is <b>folded once in the middle</b> (right side over the left).<br>A hole is punched in the <b>top right</b> of the folded version.<br><br>How many holes does the fully unfolded sheet have?',
+ opts:['1 hole top right','2 holes: top left + top right','2 holes: both left','4 holes'],ans:1,
+ expl:'The hole punches through both layers simultaneously. When unfolding: one hole top right and the mirrored hole top left.'},
 
-{cat:'R',diff:4,type:'text',title:'Quadrate zählen:',
- q:'Wie viele Quadrate <b>aller Größen</b> (1×1, 2×2, 3×3, 4×4) gibt es in einem <b>4×4-Gitter</b>?',
+{cat:'R',diff:4,type:'text',title:'Counting Squares:',
+ q:'How many squares of <b>all sizes</b> (1×1, 2×2, 3×3, 4×4) are there in a <b>4×4 grid</b>?',
  opts:['16','20','25','30'],ans:3,
- expl:'1×1: 4×4=16, 2×2: 3×3=9, 3×3: 2×2=4, 4×4: 1×1=1. Gesamt: 16+9+4+1 = 30.'},
+ expl:'1x1: 4x4=16, 2x2: 3x3=9, 3x3: 2x2=4, 4x4: 1x1=1. Total: 16+9+4+1 = 30.'},
 
-{cat:'R',diff:4,type:'text',title:'Bemalter Würfel – 3D-Vorstellung:',
- q:'Ein Würfel wird <b>an allen 6 Seiten rot bemalt</b>, dann in <b>27 kleine Würfelchen (3×3×3)</b> geschnitten.<br><br>Wie viele Würfelchen haben genau <b>2 rote Flächen</b>?',
+{cat:'R',diff:4,type:'text',title:'Painted Cube – 3D Visualization:',
+ q:'A cube is <b>painted red on all 6 sides</b>, then cut into <b>27 small cubes (3x3x3)</b>.<br><br>How many small cubes have exactly <b>2 red faces</b>?',
  opts:['6','8','12','16'],ans:2,
- expl:'Würfelchen mit genau 2 bemalten Flächen sitzen auf den 12 Kanten (ohne Ecken): 12 Kanten × 1 Würfelchen = 12. (Ecken: 8 mit 3 Flächen; Seitenmitten: 6 mit 1 Fläche; Kern: 1 mit 0 Flächen)'},
+ expl:'Small cubes with exactly 2 painted faces are located on the 12 edges (excluding corners): 12 edges × 1 small cube = 12. (Corners: 8 with 3 faces; face centers: 6 with 1 face; center: 1 with 0 faces)'},
 
-/* ─── VERBALE ANALOGIEN (12) ─── */
-{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Arzt','Krankenhaus','Lehrer','___'],
- opts:['Schüler','Schule','Buch','Unterricht'],ans:1,
- expl:'Ein Arzt arbeitet in einem Krankenhaus; ein Lehrer arbeitet in einer Schule. (Person ↔ Arbeitsort)'},
+/* ─── VERBAL ANALOGIEN (12) ─── */
+{cat:'V',diff:1,type:'analogy',title:'Complete the analogy:',
+ analogy:['Doctor','Hospital','Teacher','___'],
+ opts:['Student','School','Book','Lesson'],ans:1,
+ expl:'A doctor works in a hospital; a teacher works in a school. (Person ↔ Workplace)'},
 
-{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Auge','Sehen','Ohr','___'],
- opts:['Hören','Riechen','Sprechen','Anfassen'],ans:0,
- expl:'Das Auge ist das Organ des Sehens; das Ohr ist das Organ des Hörens. (Sinnesorgan ↔ Sinneswahrnehmung)'},
+{cat:'V',diff:1,type:'analogy',title:'Complete the analogy:',
+ analogy:['Eye','Seeing','Ear','___'],
+ opts:['Hearing','Smelling','Speaking','Touching'],ans:0,
+ expl:'The eye is the organ of sight; the ear is the organ of hearing. (Sense organ ↔ Sensory perception)'},
 
-{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Hund','Bellen','Katze','___'],
- opts:['Knurren','Zischen','Miauen','Schnurren'],ans:2,
- expl:'Hunde bellen; Katzen miauen – der jeweils charakteristische Laut des Tieres. (Tier ↔ typischer Laut)'},
+{cat:'V',diff:1,type:'analogy',title:'Complete the analogy:',
+ analogy:['Dog','Barking','Cat','___'],
+ opts:['Growling','Hissing','Meowing','Purring'],ans:2,
+ expl:'Dogs bark; cats meow – the respective characteristic sound of the animal. (Animal ↔ Typical sound)'},
 
-{cat:'V',diff:1,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Vogel','Nest','Biene','___'],
- opts:['Honig','Stachel','Bienenstock','Blume'],ans:2,
- expl:'Der Vogel lebt im Nest; die Biene lebt im Bienenstock. (Tier ↔ Wohnstätte)'},
+{cat:'V',diff:1,type:'analogy',title:'Complete the analogy:',
+ analogy:['Bird','Nest','Bee','___'],
+ opts:['Honey','Stinger','Beehive','Flower'],ans:2,
+ expl:'The bird lives in the nest; the bee lives in the beehive. (Animal ↔ Habitation)'},
 
-{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Buch','Kapitel','Haus','___'],
- opts:['Fenster','Dach','Keller','Zimmer'],ans:3,
- expl:'Ein Buch gliedert sich in Kapitel; ein Haus gliedert sich in Zimmer. (Ganzes ↔ Bestandteil)'},
+{cat:'V',diff:2,type:'analogy',title:'Complete the analogy:',
+ analogy:['Book','Chapter','House','___'],
+ opts:['Window','Roof','Basement','Room'],ans:3,
+ expl:'A book is divided into chapters; a house is divided into rooms. (Whole ↔ Component)'},
 
-{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Bäcker','Brot','Schreiner','___'],
- opts:['Holz','Möbel','Säge','Nagel'],ans:1,
- expl:'Der Bäcker produziert Brot; der Schreiner produziert Möbel. (Handwerker ↔ erzeugtes Produkt)'},
+{cat:'V',diff:2,type:'analogy',title:'Complete the analogy:',
+ analogy:['Baker','Bread','Carpenter','___'],
+ opts:['Wood','Furniture','Saw','Nail'],ans:1,
+ expl:'The baker produces bread; the carpenter produces furniture. (Craftsman ↔ Manufactured product)'},
 
-{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Tag','Nacht','Heiß','___'],
- opts:['Warm','Glut','Kalt','Kühl'],ans:2,
- expl:'Tag und Nacht sind absolute Gegensätze; Heiß und Kalt sind entsprechende Gegensätze. (Gegensatzpaar)'},
+{cat:'V',diff:2,type:'analogy',title:'Complete the analogy:',
+ analogy:['Day','Night','Hot','___'],
+ opts:['Warm','Glow','Cold','Cool'],ans:2,
+ expl:'Day and night are absolute opposites; hot and cold are corresponding opposites. (Antonym pair)'},
 
-{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Messer','Schneiden','Pinsel','___'],
- opts:['Farbe','Leinwand','Malen','Zeichnen'],ans:2,
- expl:'Ein Messer ist ein Werkzeug zum Schneiden; ein Pinsel ist ein Werkzeug zum Malen. (Werkzeug ↔ Funktion)'},
+{cat:'V',diff:2,type:'analogy',title:'Complete the analogy:',
+ analogy:['Knife','Cutting','Paintbrush','___'],
+ opts:['Paint','Canvas','Painting','Drawing'],ans:2,
+ expl:'A knife is a tool for cutting; a paintbrush is a tool for painting. (Tool ↔ Function)'},
 
-{cat:'V',diff:2,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Hunger','Essen','Müdigkeit','___'],
- opts:['Bett','Schlafen','Ausruhen','Träumen'],ans:1,
- expl:'Hunger befriedigt man durch Essen; Müdigkeit überwindet man durch Schlafen. (Mangel ↔ Abhilfe)'},
+{cat:'V',diff:2,type:'analogy',title:'Complete the analogy:',
+ analogy:['Hunger','Eating','Fatigue','___'],
+ opts:['Bed','Sleeping','Resting','Dreaming'],ans:1,
+ expl:'Hunger is satisfied by eating; fatigue is overcome by sleeping. (Deficiency ↔ Remedy)'},
 
-{cat:'V',diff:3,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Dirigent','Orchester','Trainer','___'],
- opts:['Spielfeld','Schiedsrichter','Trophäe','Mannschaft'],ans:3,
- expl:'Der Dirigent leitet das Orchester; der Trainer leitet die Mannschaft. (Leiter ↔ geleitete Gruppe)'},
+{cat:'V',diff:3,type:'analogy',title:'Complete the analogy:',
+ analogy:['Conductor','Orchestra','Coach','___'],
+ opts:['Field','Referee','Trophy','Team'],ans:3,
+ expl:'The conductor directs the orchestra; the coach directs the team. (Leader ↔ Directed group)'},
 
-{cat:'V',diff:3,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Frühling','Sommer','Morgen','___'],
- opts:['Nacht','Abend','Mittag','Tag'],ans:2,
- expl:'Auf den Frühling folgt der Sommer (nächste Jahreszeit); auf den Morgen folgt der Mittag (nächste Tageszeit). (Sequenz ↔ Nachfolger)'},
+{cat:'V',diff:3,type:'analogy',title:'Complete the analogy:',
+ analogy:['Spring','Summer','Morning','___'],
+ opts:['Night','Evening','Noon','Day'],ans:2,
+ expl:'Spring is followed by summer (next season); morning is followed by noon (next time of day). (Sequence ↔ Successor)'},
 
-{cat:'V',diff:3,type:'analogy',title:'Vervollständige die Analogie:',
- analogy:['Gärtner','Garten','Bibliothekar','___'],
- opts:['Bücher','Lesen','Bibliothek','Wissen'],ans:2,
- expl:'Der Gärtner pflegt den Garten; der Bibliothekar verwaltet die Bibliothek. (Person ↔ Verantwortungsbereich)'},
+{cat:'V',diff:3,type:'analogy',title:'Complete the analogy:',
+ analogy:['Gardener','Garden','Librarian','___'],
+ opts:['Books','Reading','Library','Knowledge'],ans:2,
+ expl:'The gardener maintains the garden; the librarian manages the library. (Person ↔ Area of responsibility)'},
 ];
 
 /* ===================== STATE ===================== */
@@ -615,33 +615,33 @@ function launchConfetti(){
 function zeigeLanding(){
   state.screen='landing';clearInterval(timerInt);
   const saves=getAllSaves();
-  const sh=saves.length?`<div class="saves-list"><h4>Gespeicherte Fortschritte</h4>${
+  const sh=saves.length?`<div class="saves-list"><h4>Saved Progress</h4>${
     saves.map(s=>`<div class="save-item" onclick="selectSave('${s.name.replace(/'/g,"\\'")}')">
       <span class="save-name">👤 ${s.name}</span>
-      <span class="save-meta">${s.answers?s.answers.filter(a=>a!==-1).length:s.qi}/${FRAGEN.length} Fragen · ${new Date(s.savedAt).toLocaleDateString('de-DE')}</span>
+      <span class="save-meta">${s.answers?s.answers.filter(a=>a!==-1).length:s.qi}/${FRAGEN.length} questions · ${new Date(s.savedAt).toLocaleDateString('en-US')}</span>
     </div>`).join('')
   }</div>`:'';
   app.innerHTML=`<div class="landing">
-  <h1>🧠 IQ-Intelligenztest</h1>
-  <p class="sub">Standardisierter Online-IQ-Test · Deutsch · Wissenschaftlich kalibriert</p>
+  <h1>🧠 IQ Intelligence Test</h1>
+  <p class="sub">Standardized Online IQ Test · English · Scientifically Calibrated</p>
   <div class="desc">
-    <p>Dieser Test schätzt deinen IQ anhand von Aufgaben aus <b>Raven Progressive Matrices</b>, <b>WAIS-IV</b> und dem <b>Stanford-Binet-Verfahren</b>: Mustererkennung, Zahlenreihen, logisches Denken, räumliche Vorstellung und verbale Analogien.</p><br>
-    <p>Auswertung via IRT-gewichteter Punktzahl und Probit-Normierung auf die Wechsler-Skala (μ=100, σ=15). Falsche Antworten werden nach dem Test mit Erklärungen gezeigt. Du kannst Fragen markieren, überspringen und zurückgehen.</p>
+    <p>This test estimates your IQ based on tasks from <b>Raven's Progressive Matrices</b>, <b>WAIS-IV</b>, and the <b>Stanford-Binet Intelligence Scales</b>: pattern recognition, numerical series, logical reasoning, spatial visualization, and verbal analogies.</p><br>
+    <p>Scoring is calculated via IRT-weighted scoring and Probit normalization to the Wechsler scale (μ=100, σ=15). Incorrect answers are shown with explanations after the test. You can flag, skip, and go back to questions.</p>
   </div>
   <div class="info-grid">
-    <div class="info-card"><div class="num">48</div><div class="lbl">Fragen</div></div>
-    <div class="info-card"><div class="num">~30</div><div class="lbl">Minuten</div></div>
-    <div class="info-card"><div class="num">5</div><div class="lbl">Kategorien</div></div>
+    <div class="info-card"><div class="num">48</div><div class="lbl">Questions</div></div>
+    <div class="info-card"><div class="num">~30</div><div class="lbl">Minutes</div></div>
+    <div class="info-card"><div class="num">5</div><div class="lbl">Categories</div></div>
   </div>
   <div class="cats">
-    <span class="cat-tag" style="background:rgba(59,130,246,.12);color:#93c5fd;border-color:rgba(59,130,246,.25)">🔷 Mustererkennung (8)</span>
-    <span class="cat-tag" style="background:rgba(34,197,94,.12);color:#86efac;border-color:rgba(34,197,94,.25)">🔢 Numerik (10)</span>
-    <span class="cat-tag" style="background:rgba(249,115,22,.12);color:#fdba74;border-color:rgba(249,115,22,.25)">🧩 Logik (10)</span>
-    <span class="cat-tag" style="background:rgba(236,72,153,.12);color:#f9a8d4;border-color:rgba(236,72,153,.25)">📐 Räumliches Denken (8)</span>
-    <span class="cat-tag" style="background:rgba(139,92,246,.12);color:#c4b5fd;border-color:rgba(139,92,246,.25)">💬 Verbale Analogien (12)</span>
+    <span class="cat-tag" style="background:rgba(59,130,246,.12);color:#93c5fd;border-color:rgba(59,130,246,.25)">🔷 Pattern Recognition (8)</span>
+    <span class="cat-tag" style="background:rgba(34,197,94,.12);color:#86efac;border-color:rgba(34,197,94,.25)">🔢 Numerical Reasoning (10)</span>
+    <span class="cat-tag" style="background:rgba(249,115,22,.12);color:#fdba74;border-color:rgba(249,115,22,.25)">🧩 Logical Reasoning (10)</span>
+    <span class="cat-tag" style="background:rgba(236,72,153,.12);color:#f9a8d4;border-color:rgba(236,72,153,.25)">📐 Spatial Reasoning (8)</span>
+    <span class="cat-tag" style="background:rgba(139,92,246,.12);color:#c4b5fd;border-color:rgba(139,92,246,.25)">💬 Verbal Analogies (12)</span>
   </div>
-  <button class="btn btn-primary" onclick="zeigeNameneingabe()">Test beginnen →</button>
-  <p style="color:#64748b;font-size:.77rem;margin-top:14px">Kein Zeitlimit pro Frage · Fortschritt automatisch gespeichert · Zurückgehen möglich · Fragen markierbar</p>
+  <button class="btn btn-primary" onclick="zeigeNameneingabe()">Start Test →</button>
+  <p style="color:#64748b;font-size:.77rem;margin-top:14px">No time limit per question · Progress saved automatically · Going back allowed · Questions can be flagged</p>
   ${sh}
 </div>`;
 }
@@ -650,13 +650,13 @@ function zeigeLanding(){
 function zeigeNameneingabe(){
   state.screen='name';
   app.innerHTML=`<div class="name-screen">
-  <h2>Wer bist du?</h2>
-  <p>Gib deinen Namen ein. Jede Person hat einen eigenen Fortschritt.<br>Bei Rückkehr kannst du genau dort weitermachen, wo du aufgehört hast.</p>
-  <input class="name-input" id="nameInput" type="text" placeholder="Dein Name oder Spitzname" maxlength="40"
+  <h2>Who are you?</h2>
+  <p>Enter your name. Each person has their own progress.<br>When you return, you can resume exactly where you left off.</p>
+  <input class="name-input" id="nameInput" type="text" placeholder="Your name or nickname" maxlength="40"
     onkeydown="if(event.key==='Enter')bestaetigeNamen()">
   <div class="btn-row">
-    <button class="btn btn-secondary" onclick="zeigeLanding()">← Zurück</button>
-    <button class="btn btn-primary" onclick="bestaetigeNamen()">Weiter →</button>
+    <button class="btn btn-secondary" onclick="zeigeLanding()">← Back</button>
+    <button class="btn btn-primary" onclick="bestaetigeNamen()">Next →</button>
   </div>
 </div>`;
   document.getElementById('nameInput').focus();
@@ -683,16 +683,16 @@ function zeigeFortfahren(name,saved){
   const cnt=saved.answers?saved.answers.filter(a=>a!==-1).length:saved.qi;
   const m=Math.floor(saved.akkumZeit/60),s=saved.akkumZeit%60;
   app.innerHTML=`<div class="continue-screen">
-  <h2>👋 Willkommen zurück, ${name}!</h2>
-  <p>Du hast einen gespeicherten Fortschritt:</p>
+  <h2>👋 Welcome back, ${name}!</h2>
+  <p>You have saved progress:</p>
   <div class="ci-box">
-    <div class="ci-row"><span>Beantwortete Fragen</span><span class="ci-val">${cnt} / ${FRAGEN.length}</span></div>
-    <div class="ci-row"><span>Investierte Zeit</span><span class="ci-val">${m}:${String(s).padStart(2,'0')} Min</span></div>
-    <div class="ci-row"><span>Gespeichert am</span><span class="ci-val">${new Date(saved.savedAt).toLocaleDateString('de-DE',{day:'2-digit',month:'short',year:'numeric'})}</span></div>
+    <div class="ci-row"><span>Answered Questions</span><span class="ci-val">${cnt} / ${FRAGEN.length}</span></div>
+    <div class="ci-row"><span>Time Invested</span><span class="ci-val">${m}:${String(s).padStart(2,'0')} Min</span></div>
+    <div class="ci-row"><span>Saved on</span><span class="ci-val">${new Date(saved.savedAt).toLocaleDateString('en-US',{day:'2-digit',month:'short',year:'numeric'})}</span></div>
   </div>
   <div class="btn-row">
-    <button class="btn btn-danger" onclick="starteTest(true)">🔄 Neu starten</button>
-    <button class="btn btn-primary" onclick="fortsetzTest()">▶ Fortfahren</button>
+    <button class="btn btn-danger" onclick="starteTest(true)">🔄 Restart</button>
+    <button class="btn btn-primary" onclick="fortsetzTest()">▶ Resume</button>
   </div>
 </div>`;
 }
@@ -736,15 +736,15 @@ function zeigeFrage(){
 
   app.innerHTML=`<div class="test-container">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:8px;flex-wrap:wrap">
-    <span style="color:#64748b;font-size:.78rem">👤 ${state.userName} &nbsp;·&nbsp; ${answered}/${FRAGEN.length} beantwortet</span>
-    <span style="color:#64748b;font-size:.78rem">💾 Auto-Speicherung aktiv</span>
+    <span style="color:#64748b;font-size:.78rem">👤 ${state.userName} &nbsp;·&nbsp; ${answered}/${FRAGEN.length} answered</span>
+    <span style="color:#64748b;font-size:.78rem">💾 Auto-saving active</span>
   </div>
   <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
   <div class="test-header">
     <div class="test-header-left">
-      <span class="q-counter">Frage ${state.qi+1} / ${FRAGEN.length}</span>
+      <span class="q-counter">Question ${state.qi+1} / ${FRAGEN.length}</span>
       <span class="q-cat" data-cat="${q.cat}">${KAT[q.cat].icon} ${KAT[q.cat].name}</span>
-      <span class="diff-stars" style="color:#f59e0b" title="Schwierigkeit">${stars}</span>
+      <span class="diff-stars" style="color:#f59e0b" title="Difficulty">${stars}</span>
     </div>
     <div class="test-header-right">
       <span class="timer" id="timer">⏱ ${tm}</span>
@@ -756,14 +756,14 @@ function zeigeFrage(){
   </div>
   <div class="nav-row">
     <div class="nav-left">
-      ${state.qi>0?`<button class="btn btn-secondary" onclick="vorherigeFrageFn()" style="padding:11px 18px;font-size:.9rem">← Zurück</button>`:'<span></span>'}
+      ${state.qi>0?`<button class="btn btn-secondary" onclick="vorherigeFrageFn()" style="padding:11px 18px;font-size:.9rem">← Back</button>`:'<span></span>'}
     </div>
     <div class="nav-right">
       <button class="btn-icon ${isFlagged?'flagged':''}" onclick="toggleFlag()" title="${isFlagged?'Markierung entfernen':'Frage markieren'}">🚩 ${isFlagged?'Markiert':'Markieren'}</button>
-      <button class="btn-icon" onclick="zeigeUebersicht()" title="Alle Fragen anzeigen">📋 Übersicht</button>
-      <button class="btn-icon" onclick="pauseTest()" title="Test pausieren">⏸ Pause</button>
+      <button class="btn-icon" onclick="zeigeUebersicht()" title="Show all questions">📋 Overview</button>
+      <button class="btn-icon" onclick="pauseTest()" title="Pause test">⏸ Pause</button>
       <button class="btn btn-primary" onclick="naechsteFrage()" id="nextBtn" ${!hasAns?'style="opacity:.5"':''}>
-        ${isLast?'Test abschließen ✓':'Weiter →'}
+        ${isLast?'Test abschließen ✓':'Next →'}
       </button>
     </div>
   </div>
@@ -819,17 +819,17 @@ function zeigeUebersicht(){
   }).join('');
   const ov=document.createElement('div');ov.className='overlay';ov.id='ovOverlay';
   ov.innerHTML=`<div class="overview-card">
-    <h3>📋 Fragenübersicht</h3>
-    <p class="ov-sub">${answered} von ${FRAGEN.length} beantwortet · ${state.flagged.size} markiert</p>
+    <h3>📋 Questions Overview</h3>
+    <p class="ov-sub">${answered} of ${FRAGEN.length} answered · ${state.flagged.size} flagged</p>
     <div class="q-grid">${dots}</div>
     <div class="ov-legend">
-      <div class="ov-leg"><div class="ov-leg-dot" style="background:rgba(255,255,255,.15)"></div>Noch offen</div>
-      <div class="ov-leg"><div class="ov-leg-dot" style="background:#818cf8"></div>Beantwortet</div>
-      <div class="ov-leg"><div class="ov-leg-dot" style="background:rgba(255,255,255,.15);border:2px solid #f97316"></div>Markiert (🚩)</div>
-      <div class="ov-leg"><div class="ov-leg-dot" style="outline:3px solid #fff;outline-offset:2px;background:#475569"></div>Aktuelle Frage</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="background:rgba(255,255,255,.15)"></div>Remaining</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="background:#818cf8"></div>Answered</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="background:rgba(255,255,255,.15);border:2px solid #f97316"></div>Flagged (🚩)</div>
+      <div class="ov-leg"><div class="ov-leg-dot" style="outline:3px solid #fff;outline-offset:2px;background:#475569"></div>Current Question Paper</div>
     </div>
     <div style="display:flex;gap:10px;justify-content:center">
-      <button class="btn btn-secondary" onclick="schliessOv(-1)" style="padding:10px 24px;font-size:.9rem">Schließen</button>
+      <button class="btn btn-secondary" onclick="schliessOv(-1)" style="padding:10px 24px;font-size:.9rem">Close</button>
     </div>
   </div>`;
   document.body.appendChild(ov);
@@ -852,11 +852,11 @@ function pauseTest(){
   const m=Math.floor(el/60),s=el%60;
   const ov=document.createElement('div');ov.className='overlay';ov.id='pauseOv';
   ov.innerHTML=`<div class="overlay-card">
-    <h2>⏸ Pausiert</h2>
-    <p>Dein Fortschritt wurde gespeichert.<br>Bisherige Zeit: <b>${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}</b></p>
+    <h2>⏸ Paused</h2>
+    <p>Your progress has been saved.<br>Elapsed time: <b>${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}</b></p>
     <div class="btn-col">
-      <button class="btn btn-primary" onclick="resumeTest()" style="width:220px">▶ Fortfahren</button>
-      <button class="btn btn-secondary" onclick="zeigeLanding()" style="width:220px;padding:11px 24px;font-size:.9rem">← Zum Start</button>
+      <button class="btn btn-primary" onclick="resumeTest()" style="width:220px">▶ Resume</button>
+      <button class="btn btn-secondary" onclick="zeigeLanding()" style="width:220px;padding:11px 24px;font-size:.9rem">← To Start</button>
     </div>
   </div>`;
   document.body.appendChild(ov);
@@ -874,11 +874,11 @@ function zeigeAbschlussModal(skipped){
   clearInterval(timerInt);
   const ov=document.createElement('div');ov.className='overlay';ov.id='abschlussOv';
   ov.innerHTML=`<div class="overlay-card">
-    <h2>⚠️ ${skipped} offen</h2>
-    <p>Du hast noch ${skipped} Frage${skipped>1?'n':''} nicht beantwortet.<br>Nicht beantwortete Fragen werden als falsch gewertet.</p>
+    <h2>⚠️ ${skipped} Unanswered</h2>
+    <p>You have ${skipped} unanswered question${skipped>1?'s':''}.<br>Unanswered questions will be scored as incorrect.</p>
     <div class="btn-col">
-      <button class="btn btn-secondary" onclick="pruefeOffene()" style="width:240px">← Offene prüfen</button>
-      <button class="btn btn-primary" onclick="finaliziereTest()" style="width:240px">Trotzdem abschließen</button>
+      <button class="btn btn-secondary" onclick="pruefeOffene()" style="width:240px">← Review Unanswered</button>
+      <button class="btn btn-primary" onclick="finaliziereTest()" style="width:240px">Finish Anyway</button>
     </div>
   </div>`;
   document.body.appendChild(ov);
@@ -931,14 +931,14 @@ function berechneErgebnis(){
   const fz=(iq-100)/15;
   const perc=Math.min(99.9,Math.max(0.1,(0.5*(1+erf(fz/Math.sqrt(2))))*100));
   let label,farbe;
-  if(iq<70){label='Sehr niedrig';farbe='#ef4444';}
-  else if(iq<80){label='Unterdurchschnittlich';farbe='#f97316';}
-  else if(iq<90){label='Leicht unterdurchschnittlich';farbe='#eab308';}
-  else if(iq<110){label='Durchschnittlich';farbe='#22c55e';}
-  else if(iq<120){label='Überdurchschnittlich';farbe='#3b82f6';}
-  else if(iq<130){label='Hochbegabt';farbe='#6366f1';}
-  else if(iq<140){label='Sehr hochbegabt';farbe='#8b5cf6';}
-  else{label='Außergewöhnlich';farbe='#d946ef';}
+  if(iq<70){label='Very low';farbe='#ef4444';}
+  else if(iq<80){label='Borderline';farbe='#f97316';}
+  else if(iq<90){label='Low average';farbe='#eab308';}
+  else if(iq<110){label='Average';farbe='#22c55e';}
+  else if(iq<120){label='High average';farbe='#3b82f6';}
+  else if(iq<130){label='Superior';farbe='#6366f1';}
+  else if(iq<140){label='Very superior';farbe='#8b5cf6';}
+  else{label='Exceptionally gifted';farbe='#d946ef';}
   const falsch=[];
   FRAGEN.forEach((q,i)=>{if(state.answers[i]!==q.ans)falsch.push({i,q,got:state.answers[i]});});
   return{iq,perc:perc.toFixed(1),label,farbe,richtig,pct:(pct*100).toFixed(1),kat,avgZ:avgZ.toFixed(1),gZ:state.gesamtZeit,spAdj:spAdj.toFixed(1),gew,maxG,falsch};
@@ -948,11 +948,11 @@ function berechneErgebnis(){
 function getCatTip(cat,p){
   if(p>=80)return null;
   const t={
-    M:'💡 Tipp: Trainiere Mustererkennung mit Raven-Matrices oder Sudoku-Rätseln.',
-    Z:'💡 Tipp: Übe Zahlenfolgen täglich – viele Apps bieten kurze Trainingseinheiten.',
-    L:'💡 Tipp: Syllogismus-Übungen und Logikrätsel stärken das deduktive Denken.',
-    R:'💡 Tipp: 3D-Puzzle, Origami oder mentale Rotationsübungen verbessern räumliches Denken.',
-    V:'💡 Tipp: Lesen, Kreuzworträtsel und Analogie-Übungen stärken verbale Intelligenz.'
+    M:'💡 Tip: Train Pattern Recognition with Raven's Matrices or Sudoku puzzles.',
+    Z:'💡 Tip: Practice number series daily – many apps offer short training sessions.',
+    L:'💡 Tip: Syllogism exercises and logic puzzles strengthen deductive reasoning.',
+    R:'💡 Tip: 3D puzzles, origami, or mental rotation exercises improve spatial reasoning.',
+    V:'💡 Tip: Reading, crossword puzzles, and analogy exercises strengthen verbal intelligence.'
   };
   return t[cat];
 }
@@ -964,11 +964,11 @@ function zeigeErgebnis(){
 
   // Motivational banner
   let motiv;
-  if(r.iq>=130)motiv={title:'🌟 Außergewöhnliche Leistung!',text:'Du zeigst eine herausragende analytische Kapazität. Deine Ergebnisse in Logik und Mustererkennung liegen im Spitzenbereich.',bg:'rgba(139,92,246,.12)',border:'rgba(139,92,246,.4)'};
-  else if(r.iq>=120)motiv={title:'🎯 Hochbegabt',text:'Du befindest dich klar im hochbegabten Bereich. Deine Stärken in deduktivem Denken und Mustererkennung sind bemerkenswert.',bg:'rgba(59,130,246,.12)',border:'rgba(59,130,246,.35)'};
-  else if(r.iq>=110)motiv={title:'👍 Überdurchschnittlich',text:'Du übertriffst den Bevölkerungsdurchschnitt deutlich. Mit gezieltem Üben sind weitere Verbesserungen möglich.',bg:'rgba(34,197,94,.12)',border:'rgba(34,197,94,.3)'};
-  else if(r.iq>=90)motiv={title:'📊 Durchschnittlicher Bereich',text:'Du liegst im normalen Bereich – wie die Mehrheit der Bevölkerung. Regelmäßiges Üben führt zu messbaren Verbesserungen.',bg:'rgba(234,179,8,.12)',border:'rgba(234,179,8,.3)'};
-  else motiv={title:'💪 Weiter üben!',text:'IQ ist trainierbar. Regelmäßiges Üben von Logik- und Musteraufgaben führt nachweislich zu Verbesserungen.',bg:'rgba(239,68,68,.1)',border:'rgba(239,68,68,.25)'};
+  if(r.iq>=130)motiv={title:'🌟 Exceptionally giftede Leistung!',text:'You demonstrate outstanding analytical capacity. Your results in logic and pattern recognition are in the top tier.',bg:'rgba(139,92,246,.12)',border:'rgba(139,92,246,.4)'};
+  else if(r.iq>=120)motiv={title:'🎯 Superior',text:'You are clearly in the superior range. Your strengths in deductive reasoning and pattern recognition are remarkable.',bg:'rgba(59,130,246,.12)',border:'rgba(59,130,246,.35)'};
+  else if(r.iq>=110)motiv={title:'👍 High average',text:'You significantly exceed the population average. With targeted practice, further improvement is possible.',bg:'rgba(34,197,94,.12)',border:'rgba(34,197,94,.3)'};
+  else if(r.iq>=90)motiv={title:'📊 Averageer Bereich',text:'You are in the normal range – like the majority of the population. Regular practice leads to measurable improvements.',bg:'rgba(234,179,8,.12)',border:'rgba(234,179,8,.3)'};
+  else motiv={title:'💪 Keep practicing!',text:'IQ is trainable. Regular practice of logic and pattern tasks has been proven to yield improvements.',bg:'rgba(239,68,68,.1)',border:'rgba(239,68,68,.25)'};
 
   // Category bars + tips
   let katB='';
@@ -984,13 +984,13 @@ function zeigeErgebnis(){
 
   // IQ reference table
   const ranges=[
-    {min:145,max:145,lbl:'Außergewöhnlich',pct:'&lt; 0.1%'},
-    {min:130,max:144,lbl:'Sehr hochbegabt',pct:'2%'},
-    {min:120,max:129,lbl:'Hochbegabt',pct:'7%'},
-    {min:110,max:119,lbl:'Überdurchschnittlich',pct:'16%'},
-    {min:90,max:109,lbl:'Durchschnittlich',pct:'50%'},
-    {min:80,max:89,lbl:'Unterdurchschnittlich',pct:'16%'},
-    {min:55,max:79,lbl:'Weit unterdurchschnittlich',pct:'9%'},
+    {min:145,max:145,lbl:'Exceptionally gifted',pct:'&lt; 0.1%'},
+    {min:130,max:144,lbl:'Very superior',pct:'2%'},
+    {min:120,max:129,lbl:'Superior',pct:'7%'},
+    {min:110,max:119,lbl:'High average',pct:'16%'},
+    {min:90,max:109,lbl:'Average',pct:'50%'},
+    {min:80,max:89,lbl:'Borderline',pct:'16%'},
+    {min:55,max:79,lbl:'Very low',pct:'9%'},
   ];
   let tblRows=ranges.map(row=>{
     const cur=r.iq>=row.min&&r.iq<=row.max;
@@ -1000,7 +1000,7 @@ function zeigeErgebnis(){
   // Wrong answers
   const lbl=['A','B','C','D','E','F'];
   const falschHTML=r.falsch.length===0?
-    `<div style="text-align:center;padding:20px;color:#4ade80;font-size:1rem">✅ Hervorragend! Alle Fragen richtig beantwortet.</div>`:
+    `<div style="text-align:center;padding:20px;color:#4ade80;font-size:1rem">✅ Excellent! All questions answered correctly.</div>`:
     r.falsch.map(({i,q,got})=>{
       const isVis=q.type!=='text'&&q.type!=='analogy';
       const gText=got===-1?'(Keine Antwort)':(isVis?`Option ${lbl[got]||'?'}`:q.opts[got]||'–');
@@ -1009,15 +1009,15 @@ function zeigeErgebnis(){
       const analogyHint=q.type==='analogy'?`<div class="wrong-analogy">${q.analogy[0]} : ${q.analogy[1]} = ${q.analogy[2]} : ?</div>`:'';
       return`<div class="wrong-item">
         <div class="wrong-header">
-          <span class="wrong-num">❌ Frage ${i+1}</span>
+          <span class="wrong-num">❌ Question ${i+1}</span>
           <span class="wrong-cat-badge" style="background:${kc}22;color:${kc};border:1px solid ${kc}44">${KAT[q.cat]?.icon} ${KAT[q.cat]?.name}</span>
           <span class="wrong-diff" style="color:#f59e0b">${'★'.repeat(q.diff)}${'☆'.repeat(5-q.diff)}</span>
         </div>
         ${analogyHint}
         <div class="wrong-title">${q.title}</div>
         <div class="wrong-ans-grid">
-          <div class="ans-box usr"><div class="al">✗ Deine Antwort</div><div>${gText}</div></div>
-          <div class="ans-box cor"><div class="al">✓ Richtige Antwort</div><div>${cText}</div></div>
+          <div class="ans-box usr"><div class="al">✗ Your Answer</div><div>${gText}</div></div>
+          <div class="ans-box cor"><div class="al">✓ Correct Answer</div><div>${cText}</div></div>
         </div>
         ${q.expl?`<div class="expl">💡 ${q.expl}</div>`:''}
       </div>`;
@@ -1026,20 +1026,20 @@ function zeigeErgebnis(){
   app.innerHTML=`<div class="results">
   <!-- PRINT CERTIFICATE -->
   <div class="print-cert">
-    <h1>🧠 IQ-Intelligenztest – Zertifikat</h1>
-    <div class="pc-meta">Ausgestellt für: <b>${state.userName}</b> · Datum: ${new Date().toLocaleDateString('de-DE')}</div>
+    <h1>🧠 IQ Intelligence Test – Certificate</h1>
+    <div class="pc-meta">Issued to: <b>${state.userName}</b> · Date: ${new Date().toLocaleDateString('en-US')}</div>
     <div class="pc-iq">${r.iq}</div>
-    <div class="pc-meta"><b>${r.label}</b><br>Perzentil: ${r.perc}% · Richtige Antworten: ${r.richtig}/${FRAGEN.length}<br>Gesamtzeit: ${gm}:${String(gs).padStart(2,'0')} Min</div>
-    <div class="pc-dis">Informelles Schätzverfahren, kein klinisch normierter IQ-Test (WAIS-IV, Stanford-Binet). Abweichung ±8–12 Punkte möglich.</div>
+    <div class="pc-meta"><b>${r.label}</b><br>Percentile: ${r.perc}% · Correct Answers: ${r.richtig}/${FRAGEN.length}<br>Total Time: ${gm}:${String(gs).padStart(2,'0')} Min</div>
+    <div class="pc-dis">Informal estimation method, not a clinically standardized IQ test (WAIS-IV, Stanford-Binet). Deviation of ±8-12 points possible.</div>
   </div>
 
   <!-- IQ SCORE -->
   <div class="iq-display">
     <div class="iq-score" id="iqNum">0</div>
-    <div class="iq-label">Geschätzter IQ-Wert · ${state.userName}</div>
+    <div class="iq-label">Estimated IQ Score · ${state.userName}</div>
   </div>
   <div class="classification" style="color:${r.farbe}">${r.label}</div>
-  <div class="percentile">Perzentil ${r.perc} % — Besser als ca. ${r.perc}% der Allgemeinbevölkerung</div>
+  <div class="percentile">Percentile ${r.perc} % — Better than approx. ${r.perc}% of the general population</div>
 
   <!-- MOTIVATIONAL BANNER -->
   <div class="motiv-banner" style="background:${motiv.bg};border-color:${motiv.border}">
@@ -1049,47 +1049,47 @@ function zeigeErgebnis(){
 
   <!-- SHARE ROW -->
   <div class="share-row">
-    <button class="share-btn" id="shareBtn" onclick="shareErgebnis(${r.iq},'${r.perc}','${r.label}')">📋 Ergebnis kopieren</button>
-    <button class="share-btn" onclick="window.print()">🖨️ Zertifikat drucken</button>
-    <button class="share-btn" onclick="starteTest(true)">🔄 Test wiederholen</button>
+    <button class="share-btn" id="shareBtn" onclick="shareErgebnis(${r.iq},'${r.perc}','${r.label}')">📋 Copy Results</button>
+    <button class="share-btn" onclick="window.print()">🖨️ Print Certificate</button>
+    <button class="share-btn" onclick="starteTest(true)">🔄 Retake Test</button>
   </div>
 
   <!-- BELL CURVE -->
-  <div class="res-card"><h3>Normalverteilung – Deine Position</h3><div id="bellCurve"></div></div>
+  <div class="res-card"><h3>Normal Distribution – Your Position</h3><div id="bellCurve"></div></div>
 
   <!-- CATEGORIES -->
-  <div class="res-card"><h3>Kategorie-Auswertung</h3>${katB}</div>
+  <div class="res-card"><h3>Category Performance</h3>${katB}</div>
 
   <!-- STATS -->
-  <div class="res-card"><h3>Teststatistik</h3>
+  <div class="res-card"><h3>Test Statistics</h3>
     <div class="detail-grid">
-      <div class="detail-item"><div class="detail-val">${r.richtig}/${FRAGEN.length}</div><div class="detail-lbl">Richtige Antworten</div></div>
-      <div class="detail-item"><div class="detail-val">${r.pct}%</div><div class="detail-lbl">Gew. Punktzahl</div></div>
-      <div class="detail-item"><div class="detail-val">${gm}:${String(gs).padStart(2,'0')}</div><div class="detail-lbl">Gesamtzeit</div></div>
-      <div class="detail-item"><div class="detail-val">${r.avgZ}s</div><div class="detail-lbl">Ø Sek. pro Frage</div></div>
-      <div class="detail-item"><div class="detail-val">${r.spAdj>0?'+':''}${r.spAdj}</div><div class="detail-lbl">Tempo-Bonus</div></div>
-      <div class="detail-item"><div class="detail-val">${r.gew}/${r.maxG}</div><div class="detail-lbl">Gew. Punkte</div></div>
+      <div class="detail-item"><div class="detail-val">${r.richtig}/${FRAGEN.length}</div><div class="detail-lbl">Correct Answers</div></div>
+      <div class="detail-item"><div class="detail-val">${r.pct}%</div><div class="detail-lbl">Weighted Score</div></div>
+      <div class="detail-item"><div class="detail-val">${gm}:${String(gs).padStart(2,'0')}</div><div class="detail-lbl">Total Time</div></div>
+      <div class="detail-item"><div class="detail-val">${r.avgZ}s</div><div class="detail-lbl">Avg. Sec per Question</div></div>
+      <div class="detail-item"><div class="detail-val">${r.spAdj>0?'+':''}${r.spAdj}</div><div class="detail-lbl">Speed Bonus</div></div>
+      <div class="detail-item"><div class="detail-val">${r.gew}/${r.maxG}</div><div class="detail-lbl">Weighted Points</div></div>
     </div>
   </div>
 
   <!-- IQ TABLE -->
-  <div class="res-card"><h3>IQ-Klassifikationsübersicht (Wechsler-Skala)</h3>
-    <table class="iq-table"><thead><tr><th>IQ-Bereich</th><th>Klassifikation</th><th>Bevölkerungsanteil</th></tr></thead>
+  <div class="res-card"><h3>IQ Classification Overview (Wechsler Scale)</h3>
+    <table class="iq-table"><thead><tr><th>IQ Range</th><th>Classification</th><th>Population Share</th></tr></thead>
     <tbody>${tblRows}</tbody></table>
   </div>
 
   <!-- WRONG ANSWERS -->
   <div class="res-card" style="text-align:left">
-    <h3 style="text-align:center">❌ Falsche Antworten ${r.falsch.length>0?`(${r.falsch.length} von ${FRAGEN.length})`:''}</h3>
+    <h3 style="text-align:center">❌ Incorrect Answers ${r.falsch.length>0?`(${r.falsch.length} of ${FRAGEN.length})`:''}</h3>
     ${falschHTML}
   </div>
 
   <!-- DISCLAIMER -->
-  <div class="disclaimer"><b>Wissenschaftlicher Hinweis:</b> Dies ist eine informelle IQ-Schätzung, kein klinisch normierter Test. Der Test prüft ausschließlich kognitiv-universelle Fähigkeiten (Mustererkennung, Logik, Numerik, Raumvorstellung, Sprachkompetenz) – kein Spezialwissen erforderlich. Klinisch anerkannte Tests (WAIS-IV, Stanford-Binet 5, Raven APM) werden von Fachpsychologen unter standardisierten Bedingungen durchgeführt. Diese Schätzung kann um ±8–12 IQ-Punkte von einer klinischen Messung abweichen.</div>
+  <div class="disclaimer"><b>Scientific Notice:</b> This is an informal IQ estimate, not a clinically standardized test. The test evaluates cognitive-universal abilities (pattern recognition, logic, numeracy, spatial reasoning, verbal competence) – no specialized knowledge is required. Clinically recognized tests (WAIS-IV, Stanford-Binet 5, Raven APM) are administered by professional psychologists under standardized conditions. This estimate may deviate by ±8–12 IQ points from a clinical measurement.</div>
 
   <div class="btn-row" style="margin-top:18px">
-    <button class="btn btn-primary" onclick="starteTest(true)">🔄 Test wiederholen</button>
-    <button class="btn btn-secondary" onclick="zeigeLanding()">← Startseite</button>
+    <button class="btn btn-primary" onclick="starteTest(true)">🔄 Retake Test</button>
+    <button class="btn btn-secondary" onclick="zeigeLanding()">← Homepage</button>
   </div>
 </div>`;
 
@@ -1103,14 +1103,14 @@ function zeigeErgebnis(){
 
 /* ===================== SHARE ===================== */
 window.shareErgebnis=function(iq,perc,label){
-  const txt=`🧠 Mein IQ-Testergebnis: ${iq} (${label})\n📊 Perzentil: ${perc}%\n📝 Getestet mit dem deutschen Online-IQ-Test`;
-  if(navigator.share){navigator.share({title:'Mein IQ-Ergebnis',text:txt}).catch(()=>{});}
+  const txt=`🧠 My IQ Test Result: ${iq} (${label})\n📊 Percentile: ${perc}%\n📝 Tested with the online IQ Test`;
+  if(navigator.share){navigator.share({title:'My IQ Result',text:txt}).catch(()=>{});}
   else{
     navigator.clipboard.writeText(txt).then(()=>{
-      showToast('✓ Ergebnis in Zwischenablage kopiert!');
+      showToast('✓ Result copied to clipboard!');
       const btn=document.getElementById('shareBtn');
       if(btn){btn.className='share-btn copied';setTimeout(()=>{btn.className='share-btn';},3000);}
-    }).catch(()=>showToast('Kopieren nicht unterstützt'));
+    }).catch(()=>showToast('Copy not supported'));
   }
 };
 
